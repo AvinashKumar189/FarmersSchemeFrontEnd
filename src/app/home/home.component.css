@@ -1,0 +1,46 @@
+* {
+    font-family: 'Montserrat';
+}
+
+/* main */
+
+.row {
+  margin: 1rem 8rem;
+}
+
+.column1 {
+  margin-top: 15px;
+  float: left;
+  width: 47%;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: rgb(137, 201, 95);
+  font-size: x-large;
+
+}
+
+.column1:hover{
+  box-shadow:  0 0 5px 5px rgba(50, 53, 51, 0.5);
+  transition: 0.5s;
+}
+
+.column2 img {
+  float: right;
+  width: 50%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.column2 img:hover {
+  box-shadow: 0 0 2px 2px rgba(11, 99, 11, 0.5);
+  transition: 0.5s;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+

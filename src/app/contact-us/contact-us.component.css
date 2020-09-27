@@ -1,0 +1,58 @@
+*{
+    font-family: 'Montserrat';   
+}
+
+.card{
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+    margin: 1rem 8rem; 
+}
+
+.card h1 { 
+ text-align: center;
+}
+   
+.form{
+    width: 40%;
+    margin: auto;
+}
+   
+.form_container{
+     padding: 0px 40px;
+   }
+   
+input[type=text], input[type=password], input[type=email]{
+  width: 91%;
+  padding: 12px;
+  margin: 8px 0 12px 0;
+  display: inline-block;
+  border: 2px solid #f1f1f1;
+  background: #ffff;
+}
+   
+input:focus{
+  outline: none !important;
+  border: 2px solid  rgb(93, 129, 93);
+  box-shadow: 0 0 10px ;
+}
+   
+.submitbtn {
+  background-color: rgb(33, 88, 33) ;
+  padding: 12px 20px;
+  margin-left: 340px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 1;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+}
+   
+.submitbtn:hover {
+  opacity: 0.9;
+}
