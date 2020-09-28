@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navigation-bar',
-  templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.css']
+  selector: 'app-after-login-navbar',
+  templateUrl: './after-login-navbar.component.html',
+  styleUrls: ['./after-login-navbar.component.css']
 })
-export class NavigationBarComponent implements OnInit {
+export class AfterLoginNavbarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -18,10 +18,10 @@ export class NavigationBarComponent implements OnInit {
   goAboutUs(){
     this.router.navigate(['/about-us']);
   }
-  goLogin(){
-    this.router.navigate(['/login']);
-  }
   goContactUs(){
     this.router.navigate(['/contact-us']);
-  } 
+  }
+  goLogout(){
+    this.router.navigate(['/logout']);
+  }
 }

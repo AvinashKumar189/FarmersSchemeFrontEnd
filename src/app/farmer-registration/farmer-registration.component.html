@@ -1,1 +1,99 @@
-<p>farmer-registration works!</p>
+<app-navigation-bar></app-navigation-bar>
+
+<div class="card">  
+                
+    <h2>Personal Details</h2>
+      <div class="form">
+        <label for="fullname"><b>Full Name</b></label>
+        <input type="text" placeholder="Enter Full Name" name="fullname">
+      </div>
+      <div class="form">
+        <label for="contactno"><b>Contact Number</b></label>
+        <input type="number" placeholder="Enter Contact Number" name="contactno">
+      </div>
+      <div class="form">
+        <label for="emailid"><b>Email Id</b></label>
+        <input type="email" placeholder="Enter Email Id" name="emailid">
+      </div>
+      
+      <h2>Address Details</h2>
+      <div class="form">
+        <label for="addressdetails"><b>Full Address</b></label>
+        <input type="text" placeholder="Address Line 1" name="addressdetails">
+        <input type="text" placeholder="Address Line 2" name="addressdetails">
+      </div>
+
+      <div class="form">
+        <label for="city"><b>City</b></label>
+        <input type="text" placeholder="Enter City" name="city">
+      </div>
+      <div class="form">
+        <label for="state"><b>State</b></label>
+        <input type="text" placeholder="Enter State" name="state">
+      </div>
+      <div class="form">
+        <label for="pincode"><b>Pincode</b></label>
+        <input type="number" placeholder="Enter Pincode" name="pincode">
+      </div>
+
+      <h2>Land Details</h2>
+
+      <div class="form">
+        <label for="area"><b>Area</b></label>
+        <input type="text" placeholder="Enter Area" name="area">
+      </div>
+      <div class="form">
+      <label for="landaddressdetails"><b>Address</b></label>
+        <input type="text" placeholder="Land Address" name="landaddressdetails">
+      </div>
+      <div class="form">
+        <label for="landpincode"><b>Pincode</b></label>
+        <input type="number" placeholder="Enter Pincode" name="landpincode">
+      </div>
+
+      <h2>Bank Details</h2>
+
+      <div class="form">
+        <label for="accountno"><b>Account Number</b></label>
+        <input type="number" placeholder="Enter Account Number" name="accountno">
+      </div>
+      <div class="form">
+        <label for="ifsccode"><b>IFSC Code</b></label>
+        <input type="number" placeholder="Enter IFSC Code" name="ifsccode">
+      </div>
+
+      <h2>Document Upload</h2>
+      
+      <div class="form_1">
+        <label for="aadhaar"><b>Aadhaar</b></label>
+        <input type="file" name="aadhaar">
+      </div>
+      <div class="form_1">
+        <label for="pan"><b>PAN</b></label>
+        <input type="file" name="pan">
+      </div>
+      <div class="form_1">
+        <label for="certificate"><b>Certificate</b></label>
+        <input type="file" name="certificate">
+      </div>
+     
+      <h2></h2>
+      <div class="pass">
+      <div class="form">
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="*************" name="password">
+      </div>
+      <div class="form">
+        <label for="password"><b>Confirm Password</b></label>
+        <input type="password" placeholder="*************" name="password">
+      </div>
+      </div>
+       
+      <div class="form">
+      <button (click) = 'goRegisterSuccess()' type="submit" class="registerbtn">Register</button>
+      <button type="reset" class="resetbtn">Reset</button>
+      </div>
+
+</div> 
+
+<app-footer></app-footer>

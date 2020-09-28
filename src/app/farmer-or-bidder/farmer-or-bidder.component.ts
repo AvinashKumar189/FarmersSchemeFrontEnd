@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-farmer-or-bidder',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerOrBidderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goFarmerRegistration(){
+    this.router.navigate(['/farmer-registration']);
+  }
+
+  goBidderRegistration(){
+    this.router.navigate(['/bidder-registration']);
   }
 
 }

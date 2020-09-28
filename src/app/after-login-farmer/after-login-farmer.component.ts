@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-after-login-farmer',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfterLoginFarmerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+  goPlaceSellRequest(){
+    this.router.navigate(['/place-sell-request']);
+  }
 
+  goSoldCropHistory(){
+    this.router.navigate(['/sold-crop-history']);
+  }
+
+  goMarketPlace(){
+    this.router.navigate(['/marketplace']);
+  }
 }

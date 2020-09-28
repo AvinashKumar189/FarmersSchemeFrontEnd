@@ -1,0 +1,67 @@
+*{
+    font-family: 'Montserrat'; 
+  }
+  
+  .topnav {
+      overflow: hidden;
+      background-color: rgb(33, 88, 33) ;
+      margin: 1rem 4rem;
+    }
+  
+  
+  .topnav img{
+        float: left;
+        padding: 16px;
+        padding-left: 50px; 
+        height:70px;
+    }
+
+    h2 {
+        color: cornsilk;
+        padding-top: 16px;
+        padding-left: 600px;
+    }
+
+    .card{
+        margin-top: 16px;
+        padding: 16px;
+        background-color: rgb(255, 255, 255);
+        margin: 1rem 4rem; 
+    }
+    
+    .form_container{
+      padding: 30px 40px;
+      width: 40%;
+      margin: auto;
+    }
+    
+    input[type=text], input[type=password]{
+      width: 91%;
+      padding: 12px;
+      margin: 8px 0 12px 0;
+      display: inline-block;
+      border: 2px solid #f1f1f1;
+      background: #ffff;
+    }
+    input:focus{
+      outline: none !important;
+      border: 2px solid  rgb(93, 129, 93);
+      box-shadow: 0 0 10px ;
+    }
+    .loginbtn {
+      background-color: rgb(33, 88, 33) ;
+      padding: 12px 20px;
+      margin: 10px 120px;
+      border: none;
+      cursor: pointer;
+      width: 50%;
+      opacity: 1;
+      border-radius: 15px;
+    }
+    .loginbtn a {
+      text-decoration: none;
+      color: white;
+    }
+    .loginbtn:hover {
+      opacity: 0.9;
+    }

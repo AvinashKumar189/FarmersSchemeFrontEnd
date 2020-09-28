@@ -7,7 +7,7 @@
     padding: 16px;
     background-color: #fff;
     background-color: rgb(255, 255, 255);
-    margin: 1rem 8rem; 
+    margin: 1rem 4rem; 
 }
 
 .card h1 { 
@@ -41,12 +41,12 @@ input:focus{
 .submitbtn {
   background-color: rgb(33, 88, 33) ;
   padding: 12px 20px;
-  margin-left: 340px;
+  margin-left: 520px;
   margin-top: 15px;
   margin-bottom: 10px;
   border: none;
   cursor: pointer;
-  width: 40%;
+  width: 20%;
   opacity: 1;
   border-radius: 15px;
   text-decoration: none;

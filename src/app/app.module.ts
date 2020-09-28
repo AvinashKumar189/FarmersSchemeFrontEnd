@@ -20,6 +20,9 @@ import { HomeComponent } from './home/home.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { AfterLoginNavbarComponent } from './after-login-navbar/after-login-navbar.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { RegisterSuccessComponent } from './register-success/register-success.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     NavigationBarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    AfterLoginNavbarComponent,
+    AdminLoginComponent,
+    RegisterSuccessComponent
   ],
   imports: [
     BrowserModule,
