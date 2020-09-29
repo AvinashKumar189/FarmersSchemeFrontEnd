@@ -1,3 +1,4 @@
+import { Routes, RouterModule } from '@angular/router';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { BidderRegistrationComponent } from './bidder-registration/bidder-registration.component';
 import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
@@ -15,8 +16,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { AfterLoginBidderComponent } from './after-login-bidder/after-login-bidder.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
