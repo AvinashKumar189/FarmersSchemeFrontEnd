@@ -1,0 +1,78 @@
+.card{
+    margin: 1rem 4rem; 
+    padding: 16px;
+    background-color: #fff;
+}
+
+.heading1{
+    text-align: center;
+    font-size: large;
+    text-shadow: #dddddd; 
+    font-weight: bold;  
+}
+
+#t01{
+  margin: auto;
+}
+
+table {
+    width:50%;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+    text-align: center;
+  }
+
+#t01 tr:nth-child(even) {
+    background-color: #eee;
+  }
+  #t01 tr:nth-child(odd) {
+   background-color: #fff;
+  }
+  #t01 th {
+    background-color: rgb(33, 88, 33);
+    color: white;
+  }
+
+.btn {
+        background-color: #8fc28f; 
+        color: rgb(20, 17, 17); 
+        border: 2px solid #4CAF50;
+      }
+      
+      .btn:hover {
+        background-color: #cccccc;
+        color: rgb(17, 16, 16);
+      }
+
+
+  #t02{
+    margin: auto;
+  }
+  
+  table {
+      width:50%;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+    }
+  
+  #t02 tr:nth-child(even) {
+      background-color: #eee;
+    }
+    #t02 tr:nth-child(odd) {
+     background-color: #fff;
+    }
+    #t02 th {
+      background-color: rgb(33, 88, 33);
+      color: white;
+    }
