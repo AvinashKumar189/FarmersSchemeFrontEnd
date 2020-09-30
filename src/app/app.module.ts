@@ -24,6 +24,7 @@ import { AfterLoginNavbarComponent } from './after-login-navbar/after-login-navb
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
     LoginComponent,
     AfterLoginNavbarComponent,
     AdminLoginComponent,
-    RegisterSuccessComponent
+    RegisterSuccessComponent,
+
   ],
   imports: [
     BrowserModule,

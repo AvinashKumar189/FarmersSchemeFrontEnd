@@ -99,20 +99,20 @@
       <div class="form_1">
         <label for="aadhaar"><b>Aadhaar</b></label>
         <input type="file" name="aadhaar" [ngModel]="fileContent" #file="ngModel" required>
-        <p *ngIf="!file.valid" style="color: red">This field is required!</p>
+        <p *ngIf="!file.valid">This field is required!</p>
 
       </div>
 
       <div class="form_1">
         <label for="pan"><b>PAN</b></label>
         <input type="file" name="pan" [ngModel]="fileContent" #file="ngModel" required>
-        <p *ngIf="!file.valid" style="color: red">This field is required!</p>
+        <p *ngIf="!file.valid">This field is required!</p>
       </div>
 
       <div class="form_1">
         <label for="traderLicense"><b>Trader License</b></label>
         <input type="file" name="traderLicense" [ngModel]="fileContent" #file="ngModel" required>
-        <p *ngIf="!file.valid" style="color: red">This field is required!</p>
+        <p *ngIf="!file.valid">This field is required!</p>
       </div>
       
       <h2></h2>
