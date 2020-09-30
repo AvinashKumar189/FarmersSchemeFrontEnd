@@ -15,7 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { PlaceSellRequestComponent } from './place-sell-request/place-sell-request.component';
 import { SoldCropHistoryComponent } from './sold-crop-history/sold-crop-history.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -50,7 +50,7 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
