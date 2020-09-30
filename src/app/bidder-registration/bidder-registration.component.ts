@@ -20,7 +20,7 @@ export class BidderRegistrationComponent implements OnInit {
 
   goRegisterSuccess(){
     alert(JSON.stringify(this.bidder));
-    //console.log(this.farmer);
+    //console.log(this.bidder);
     //this.router.navigate(['/register-success']);
   }
 
