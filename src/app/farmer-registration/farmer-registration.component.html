@@ -115,8 +115,8 @@
       <h2>Document Upload</h2>
       
       <div class="form_1">
-        <label for="aadhaar"><b>Aadhaar</b></label>
-        <input type="file" name="aadhaar" [ngModel]="fileContent" #file="ngModel" required/>
+        <label for="aadhar"><b>Aadhar</b></label>
+        <input type="file" name="aadhar" [ngModel]="fileContent" #file="ngModel" required/>
         <p *ngIf="!file.valid">This field is required!</p>
       </div>
       <div class="form_1">
@@ -156,6 +156,13 @@
       <button type="reset" class="resetbtn" value="reset">Reset</button>
       </div>
     </form>  
+
+    <div *ngIf="data">
+      {{data.status}} <br/>
+      {{data.statusMessage}} <br/>
+      {{data.customerId}} <br/>
+    </div>
+
 </div> 
 
 <app-footer></app-footer>

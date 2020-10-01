@@ -1,5 +1,7 @@
+import { FarmerService } from './../farmer.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-farmer-registration',
@@ -8,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class FarmerRegistrationComponent implements OnInit {
   
+  farmer : Farmer = new Farmer(); 
   fileContent: any;
+  data : any;
 
-  constructor(private router: Router) { }
-  
-  farmer : Farmer = new Farmer();
+  constructor(private router: Router,private farmerService: FarmerService) { } 
 
   ngOnInit(): void {
   }
@@ -20,6 +22,9 @@ export class FarmerRegistrationComponent implements OnInit {
   goRegisterSuccess(){
     alert(JSON.stringify(this.farmer));
     //console.log(this.farmer);
+    this.farmerService.goRegisterSuccess(this.farmer).subscribe(response => {
+      this.data = response;
+    });
     //this.router.navigate(['/register-success']);
   }
 
@@ -38,7 +43,7 @@ export class Farmer {
   landPincode : number;
   accountNo : number;
   ifsc : string;
-  aadhaar : number;
+  aadhar : string;
   pan : string;
   certificate : string;
   password : string;
