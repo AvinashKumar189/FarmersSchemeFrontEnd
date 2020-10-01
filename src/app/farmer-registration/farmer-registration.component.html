@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 
 <div class="card">  
-  <form #myForm="ngForm" (ngSubmit)="myForm.valid && goRegisterSuccess()">             
+  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goRegisterSuccess()">             
     <h2>Personal Details</h2>
       <div class="form">      
         <label for="fullName"><b>Full Name</b></label>  
@@ -152,7 +152,8 @@
       </div>
        
       <div class="form">
-      <button (click) = 'goRegisterSuccess()' type="submit" class="registerbtn">Register</button>
+      <!-- <button (click) = 'goRegisterSuccess()' type="submit" class="registerbtn">Register</button> -->
+      <button type="submit" class="registerbtn">Register</button>
       <button type="reset" class="resetbtn" value="reset">Reset</button>
       </div>
     </form>  
