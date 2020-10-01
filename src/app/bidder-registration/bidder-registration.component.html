@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 
 <div class="card">
-  <form #myForm="ngForm" (ngSubmit)="myForm.valid && goRegisterSuccess()">
+  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goRegisterSuccess()">
 
     <h2>Personal Details</h2>
       <div class="form">
