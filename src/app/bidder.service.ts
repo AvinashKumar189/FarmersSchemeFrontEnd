@@ -13,7 +13,7 @@ export class BidderService {
   constructor(private http: HttpClient) { }
 
     goRegisterSuccess(bidder: Bidder) : Observable<any> {
-      let url= 'http://localhost:8181/bidder-register';
+      let url= 'http://localhost:8080/bidder-register';
       return this.http.post(url,bidder);
     }
 

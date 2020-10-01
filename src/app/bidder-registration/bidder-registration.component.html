@@ -87,7 +87,7 @@
       </div>
       <div class="form">
         <label for="ifsc"><b>IFSC Code</b></label>
-        <input type="number" placeholder="Enter IFSC Code" name="ifsc" required="11" [(ngModel)]=bidder.ifsc #ifsc="ngModel">
+        <input type="text" placeholder="Enter IFSC Code" name="ifsc" required="11" [(ngModel)]=bidder.ifsc #ifsc="ngModel">
         <div *ngIf="ifsc.invalid && myForm.submitted">
           <div *ngIf="ifsc.errors.required">
           Ifsc code is required.
@@ -95,7 +95,7 @@
         </div>
       </div>
       
-      <h2>Document Upload</h2>
+      <!-- <h2>Document Upload</h2>
       <div class="form_1">
         <label for="aadhar"><b>aadhar</b></label>
         <input type="file" name="aadhar" [ngModel]="fileContent" #file="ngModel" required>
@@ -113,7 +113,7 @@
         <label for="traderLicense"><b>Trader License</b></label>
         <input type="file" name="traderLicense" [ngModel]="fileContent" #file="ngModel" required>
         <p *ngIf="!file.valid">This field is required!</p>
-      </div>
+      </div> -->
       
       <h2></h2>
       <div class="pass">
@@ -142,5 +142,10 @@
     {{data.statusMessage}} <br/>
   </div>
  </div>
+
+ <div *ngIf="data">
+  {{data.status}} <br/>
+  {{data.statusMessage}} <br/>
+</div>
 
 <app-footer></app-footer>
