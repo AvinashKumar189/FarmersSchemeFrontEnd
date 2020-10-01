@@ -8,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class ForgotPasswordComponent implements OnInit {
 
   constructor() { }
+  user: User= new User();
 
   ngOnInit(): void {
   }
 
+  checkMail(){
+    alert(JSON.stringify(this.user));
+  }
+
+}
+export class User{
+  emailId: string;
 }

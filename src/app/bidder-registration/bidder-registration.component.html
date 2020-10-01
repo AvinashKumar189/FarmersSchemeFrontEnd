@@ -137,6 +137,10 @@
       <button type="reset" class="resetbtn" value="reset">Reset</button>
     </div>
   </form>
+  <div *ngIf="data">
+    {{data.status}} <br/>
+    {{data.statusMessage}} <br/>
+  </div>
  </div>
 
 <app-footer></app-footer>
