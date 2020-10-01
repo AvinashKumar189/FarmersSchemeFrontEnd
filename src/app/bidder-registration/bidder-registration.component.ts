@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {ValidatorFn} from '@angular/forms';
 
+
 @Component({
   selector: 'app-bidder-registration',
   templateUrl: './bidder-registration.component.html',
@@ -27,7 +28,7 @@ export class BidderRegistrationComponent implements OnInit {
 }
 export class Bidder{
   fullName: string;
-  contactNo: number;
+  contactNo: string;
   emailId: string;
   address: string;
   city: string;
@@ -39,5 +40,6 @@ export class Bidder{
   pan: string;
   traderLicense: string;
   password: string;
-
+  confirmPassword: string;
 }
+
