@@ -1,15 +1,22 @@
 <app-navigation-bar></app-navigation-bar>
 
 <div class="card">
+  <form #myForm="ngForm" (ngSubmit)="myForm.valid && checkLogin()">
     <div class="form_container">
 
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname">
+        <label for="userName"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="userName" required [(ngModel)]=user.userName #userName="ngModel">
+        <div *ngIf="myForm.submitted && userName.invalid">
+        <div *ngIf="userName.errors.required">User Name is required.</div>
+        </div>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required [(ngModel)]=user.password #password="ngModel">
+        <div *ngIf="myForm.submitted && password.invalid">
+        <div *ngIf="password.errors.required">Password is required.</div>
+        </div>
       
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw">
-      
-        <button type="submit" class="loginbtn"><a href="after_login_farmer.html">Login</a></button>
+        <button (click)='checkLogin()' type="submit" class="loginbtn"><a href="after_login_farmer.html">Login</a></button>
       
     </div>
     <div class="forgot_container">
@@ -18,6 +25,8 @@
     <div class="forgot_container">
       <span class="psw">New User?<a routerLink="/farmer-or-bidder"> Register Here</a></span>
     </div>
+  </form>
+
 </div> 
 
 <app-footer></app-footer>
