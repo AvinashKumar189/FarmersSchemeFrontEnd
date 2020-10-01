@@ -8,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class ContactUsComponent implements OnInit {
 
   constructor() { }
+  user: User= new User();
 
   ngOnInit(): void {
   }
+  check(){
+    alert(JSON.stringify(this.user));
+    //console.log(this.user);
+  }
 
+}
+export class User{
+  name: string;
+  emailId: string;
+  subject: string;
+  message: string;
 }

@@ -1,31 +1,59 @@
 <app-navigation-bar></app-navigation-bar>
 
-        
 <div class="card">
-              
+
+  <form #myForm="ngForm" (ngSubmit)="myForm.valid && check()">           
     <div class="form_container">
     <h1>Contact Us</h1>
       <div class="form">
         <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter Name" name="name">
+        <input type="text" placeholder="Enter Name" name="name" required minlength="3" [(ngModel)]=user.name #name="ngModel">
+        <div *ngIf="name.invalid && myForm.submitted">
+          <div *ngIf="name.errors.required">
+          Name is required.
+          </div>
+          <div *ngIf="name.errors.minlength">
+          Name must be more than characters long.
+          </div>
+          </div>
       </div>
+
       <div class="form">
-        <label for="emailid"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email Id" name="emailid">
+        <label for="emailId"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email Id" name="emailId" required minlength="10" [(ngModel)]=user.emailId #emailId="ngModel">
+        <div *ngIf="emailId.invalid && myForm.submitted">
+          <div *ngIf="emailId.errors.required">
+          Email is required.
+          </div>
+          <div *ngIf="emailId.errors.minlength">
+          Email must be at least 10 characters long.
+          </div>
+          </div>
       </div>
+
       <div class="form">
         <label for="subject"><b>Subject</b></label>
-        <input type="text" placeholder="Enter Subject" name="subject">
+        <input type="text" placeholder="Enter Subject" name="subject" required [(ngModel)]=user.subject #subject="ngModel">
+        <div *ngIf="subject.invalid && myForm.submitted">
+          <div *ngIf="subject.errors.required">
+          Subject is required.
+          </div>
+          </div>
       </div>
+      
       <div class="form">
         <label for="message"><b>Your Message</b></label>
-        <input type="text" placeholder="Your Message here..." name="message">
+        <input type="text" placeholder="Your Message here..." name="message" required [(ngModel)]=user.message #message="ngModel">
+        <div *ngIf="message.invalid && myForm.submitted">
+          <div *ngIf="message.errors.required">
+          Message is required.
+          </div>
+          </div>
       </div>
 
-      <button type="submit" class="submitbtn">Submit</button>
+      <button (click)='check()' type="submit" class="submitbtn">Submit</button>
     </div>
-   
+  </form>  
 </div>
-
 
 <app-footer></app-footer>
