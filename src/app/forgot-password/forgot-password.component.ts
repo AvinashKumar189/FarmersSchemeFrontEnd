@@ -14,7 +14,8 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   checkMail(){
-    alert(JSON.stringify(this.user));
+   // alert(JSON.stringify(this.user));
+    console.log(this.user);
   }
 
 }
