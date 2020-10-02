@@ -1,38 +1,56 @@
 <app-after-login-navbar></app-after-login-navbar>
 
 <div class="card">
-              
+  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goSellRequest()">               
     <div class="form_container">
       <h2>Place Your Sell Request</h2>
 
       <div class="form">
-        <label for="croptype"><b>Crop Type</b></label>
-        <input type="text" placeholder="Enter Crop Type" name="croptype">
+        <label for="cropType"><b>Crop Type</b></label>
+        <input type="text" placeholder="Enter Crop Type" name="cropType" required [(ngModel)]=sellRequest.cropType #cropType="ngModel"/>
+        <div *ngIf="myForm.submitted && cropType.invalid">
+          <div *ngIf="cropType.errors.required">Crop Type is required.</div>
+        </div>
       </div>
 
       <div class="form">
-        <label for="cropname"><b>Crop Name</b></label>
-        <input type="text" placeholder="Enter Crop Name" name="cropname">
+        <label for="cropName"><b>Crop Name</b></label>
+        <input type="text" placeholder="Enter Crop Name" name="cropName" required [(ngModel)]=sellRequest.cropName #cropName="ngModel"/>
+        <div *ngIf="myForm.submitted && cropName.invalid">
+          <div *ngIf="cropName.errors.required">Crop Name is required.</div>
+        </div>
       </div>
 
       <div class="form">
-        <label for="fertilizertype"><b>Fertilizer Type</b></label>
-        <input type="text" placeholder="Enter Fertilizer Type" name="fertilizertype">
+        <label for="fertilizerType"><b>Fertilizer Type</b></label>
+        <input type="text" placeholder="Enter Fertilizer Type" name="fertilizerType" required [(ngModel)]=sellRequest.fertilizerType #fertilizerType="ngModel"/>
+        <div *ngIf="myForm.submitted && fertilizerType.invalid">
+          <div *ngIf="fertilizerType.errors.required">Fertilizer Type is required.</div>
+        </div>
       </div>
 
       <div class="form">
         <label for="quantity"><b>Quantity</b></label>
-        <input type="number" placeholder="Enter Quantity" name="quantity">
+        <input type="number" placeholder="Enter Quantity" name="quantity" required [(ngModel)]=sellRequest.quantity #quantity="ngModel"/>
+        <div *ngIf="myForm.submitted && quantity.invalid">
+          <div *ngIf="quantity.errors.required">Quantity is required.</div>
+        </div>
       </div>
 
-      <div class="form">
+      <!-- <div class="form">
         <label for="soilphcertificate"><b>Soil pH Certificate</b></label><br/><br/>
         <input type="file" name="soilphcertificate">
-      </div>
+      </div> -->
       
       <button type="submit" class="placerequestbtn">Place Request</button>
     </div>
-   
+   </form>
+
+   <div *ngIf="data">
+    {{data.status}} <br/>
+    {{data.statusMessage}} <br/>
+  </div>
+  
 </div>
 
 

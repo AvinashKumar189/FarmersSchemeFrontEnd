@@ -1,3 +1,5 @@
+import { SellRequestService } from './../sell-request.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceSellRequestComponent implements OnInit {
 
-  constructor() { }
+  sellRequest : SellRequest = new SellRequest();
+  data : any;
+
+  constructor(private router: Router, private sellRequestService : SellRequestService) { }
 
   ngOnInit(): void {
   }
 
+  goSellRequest(){
+    alert(JSON.stringify(this.sellRequest));
+    //console.log(this.sellRequest);
+    this.sellRequestService.goSellRequest(this.sellRequest).subscribe(response => {
+    this.data = response;
+    });
+    //this.router.navigate(['/register-success']);
+  }
+
+}
+
+export class SellRequest {
+  cropType : string;
+  cropName : string;
+  fertilizerType : string;
+  quantity : number;
 }
