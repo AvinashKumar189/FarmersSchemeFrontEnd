@@ -1,75 +1,85 @@
 <app-after-login-navbar></app-after-login-navbar>
 
-<div class="background">    
+<div class="background">
+  <div class="heading1">Active Crops</div>
 
-    <div class="heading1">
-        Active Crops
-    </div>
-        
-    <div class="card">
-        <table id="t01">
-            <tr>
-              <th>Crop ID</th>
-              <th>Crop Name</th> 
-              <th>Farmer Name</th>
-              <th>Base Price</th>
-              
-            </tr>
-            <tr>
-              <td>101</td>
-              <td>Rice</td>
-              <td>Mohit</td>
-              <td>50</td>
-              <td><a><button class="btn">Click to view more</button></a></td>
-              
-            </tr>
-            <tr>
-              <td>102</td>
-              <td>Tomato</td>
-              <td>Ram</td>
-              <td>30</td>
-              <td><a><button class="btn">Click to view more</button></a></td>
-              
-            </tr>
-            <tr>
-                <td>103</td>
-                <td>Rice</td>
-                <td>Suresh</td>
-                <td>50</td>
-                <td><a><button class="btn">Click to view more</button></a></td>    
-              </tr>
-          </table>
-      </div>
-    
-      <div class="heading1">
-          Bid Info
-      </div>
-    
-      <div class="card">
-        <table id="t02">
-            <tr>
-              <th>Crop ID</th>
-              <th>Crop Name</th> 
-              <th>Current Bid</th>   
-            </tr>
-            <tr>
-              <td>101</td>
-              <td>Wheat</td>
-              <td>18000</td>                          
-            </tr>
-            <tr>
-              <td>102</td>
-              <td>Tomato</td>
-              <td>20000</td>                     
-            </tr>
-            <tr>
-                <td>103</td>
-                <td>Rice</td>
-                <td>15000</td>                            
-            </tr>
-          </table>
-      </div>
-    
-      </div>
-    
+  <div class="card">
+    <table id="t01">
+      <tr>
+        <th>Crop ID</th>
+        <th>Crop Name</th>
+        <th>Farmer Name</th>
+        <th>Base Price</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Rice</td>
+        <td>Mohit</td>
+        <td>50</td>
+        <td>
+          <a
+            ><button class="btn" (click)="viewMore()">
+              Click to view more
+            </button></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Tomato</td>
+        <td>Ram</td>
+        <td>30</td>
+        <td>
+          <a
+            ><button class="btn" (click)="viewMore()">
+              Click to view more
+            </button></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Rice</td>
+        <td>Suresh</td>
+        <td>50</td>
+        <td>
+          <a
+            ><button class="btn" (click)="viewMore()">
+              Click to view more
+            </button></a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="heading1">Bid Info</div>
+
+  <div class="card" *ngIf="toggle">
+    <table id="t02">
+      <tr>
+        <th>Crop ID</th>
+        <th>Crop Name</th>
+        <th>Current Bid</th>
+      </tr>
+      <tr *ngIf="toggle">
+        <td>101</td>
+        <td>Rice</td>
+        <td>18000</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Tomato</td>
+        <td>20000</td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Rice</td>
+        <td>15000</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
 <app-footer></app-footer>

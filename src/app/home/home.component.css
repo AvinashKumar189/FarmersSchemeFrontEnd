@@ -1,13 +1,13 @@
 * {
-    font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 /* main */
 
 .container {
-  background-image: url('/assets/Images/indian_farming1.jpg');
-  background-color: #abb4a9;  /* Used if the image is unavailable */
-  height: 600px; /* You must set a specified height */
+  background-image: url("/assets/Images/indian_farming1.jpg");
+  background-color: #abb4a9; /* Used if the image is unavailable */
+  height: 100vh; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
@@ -15,31 +15,25 @@
   margin: 1rem 4rem;
 }
 
- .content {
-  position: absolute; /* Position the background text */
-  margin-left: 8%;
-  margin-top: 20%;
+.content {
+  padding-left: 5rem;
   color: #f3ebeb; /* Grey text */
   width: 100%; /* Full width */
-  padding: 10px; /* Some padding */
+  padding-top: 35vh;
 }
 
 .content h1 {
-
-font-weight: 500;
-font-size: 60px;
-margin-left: -2%;
-text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+  font-size: 60px;
+  margin: 1rem;
+  text-shadow: 2px 2px 4px #000000;
 }
 .content p {
-font-weight: 5600;
-font-size: 35px;
-margin-left: -2%;
-color: #ffffff;
-margin-top: -2%;
-text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+  font-size: 35px;
+  margin-left: -2%;
+  color: #ffffff;
+  margin-top: -2%;
+  padding-left: 2.8rem;
+  text-shadow: 2px 2px 4px #000000;
 }
-
-
-
-
