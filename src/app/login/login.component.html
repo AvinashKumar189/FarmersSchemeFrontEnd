@@ -1,13 +1,16 @@
 <app-navigation-bar></app-navigation-bar>
 
 <div class="card">
+  <div *ngIf = "loginFailed">
+     Email/Password Invalid!
+  </div>
   <form #myForm="ngForm" (ngSubmit)="myForm.valid && checkLogin()">
     <div class="form_container">
 
-        <label for="userName"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="userName" required [(ngModel)]=user.userName #userName="ngModel">
-        <div *ngIf="myForm.submitted && userName.invalid">
-        <div *ngIf="userName.errors.required">User Name is required.</div>
+        <label for="email"><b>Username</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]=user.email #email="ngModel">
+        <div *ngIf="myForm.submitted && email.invalid">
+        <div *ngIf="email.errors.required">User Name is required.</div>
         </div>
 
         <label for="password"><b>Password</b></label>
@@ -26,6 +29,11 @@
       <span class="psw">New User?<a routerLink="/farmer-or-bidder"> Register Here</a></span>
     </div>
   </form>
+
+  <div *ngIf="data">
+    {{data.status}} <br/>
+    {{data.statusMessage}} <br/>
+  </div>
 
 </div> 
 

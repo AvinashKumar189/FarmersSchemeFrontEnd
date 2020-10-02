@@ -35,4 +35,6 @@ export class SellRequest {
   cropName: string;
   fertilizerType: string;
   quantity: number;
+  sellingDeadline : Date;
+  basePrice : number;
 }

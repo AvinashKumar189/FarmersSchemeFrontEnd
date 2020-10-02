@@ -19,13 +19,13 @@
       </div>
 
       <div class="form">
-        <label for="emailId"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email Id" name="emailId" required minlength="10" [(ngModel)]=user.emailId #emailId="ngModel">
-        <div *ngIf="emailId.invalid && myForm.submitted">
-          <div *ngIf="emailId.errors.required">
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email Id" name="email" required minlength="10" [(ngModel)]=user.email #email="ngModel">
+        <div *ngIf="email.invalid && myForm.submitted">
+          <div *ngIf="email.errors.required">
           Email is required.
           </div>
-          <div *ngIf="emailId.errors.minlength">
+          <div *ngIf="email.errors.minlength">
           Email must be at least 10 characters long.
           </div>
           </div>
