@@ -3,38 +3,48 @@
 <div class="card">
   <table id="t01">
     <tr>
+      <th>Crop Id</th>
       <th>Crop Type</th>
       <th>Crop Name</th>
       <th>Base Price</th>
       <th>Action</th>
     </tr>
-    <tr>
-      <td>Kharif</td>
-      <td>Rice</td>
-      <td>60</td>
+    <tr *ngFor="let c of cropList">           
+      <td>{{c.cropId}}</td>
+      <td>{{c.cropType}}</td>
+      <td>{{c.cropName}}</td>
+      <td>{{c.basePrice}}</td>
       <td>
-        <a><button class="btn" (click)="placeBid()">Place your bid here</button></a>
+        <a><button class="btn" type="submit" (click)= "displayCropForBidding(c.cropId,c.cropName,c.basePrice)">Make Bid</button></a>
       </td>
     </tr>
-    <tr>
-      <td>Horticulture</td>
-      <td>Tomato</td>
-      <td>30</td>
-      <td>40</td>
-      <td>
-        <a><button class="btn" (click)="placeBid()">Place your bid here</button></a>
-      </td>
-    </tr>
+
   </table>
 
-  <div class="container form_container" *ngIf="toggle">
-    <div class="form">
-      <label for="bidamount"><b>Bid Amount</b></label>
-      <input type="number" placeholder="Enter Bid Amount" name="bidamount" />
-    </div>
+  <table id="t01">
 
-    <button type="submit" class="confirmbtn">Confirm</button>
-  </div>
+    <tr>
+        <th>Crop Id</th>
+        <th>Crop Name</th>
+        <th>Current Bid</th>
+        <th>Enter Amount</th>
+    </tr>
+    <tr>
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td>{{currentBid}}</td>
+        <td>{{basePrice}}</td>
+        
+        <div class="container form_container" *ngIf="toggle">
+        <div class="form">
+        <form (ngSubmit)="placeBidForCrop()">
+            <input type = "number" placeholder="Enter bid Amount" name="bidamount" [(ngModel)]="liveprice" >
+            <input type="submit" class="confirmbtn" value="Confirm"/>
+        </form>
+        </div>
+        </div>
+    </tr>
+  </table>
 </div>
 
 <app-footer></app-footer>
