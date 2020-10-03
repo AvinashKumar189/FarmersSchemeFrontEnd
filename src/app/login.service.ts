@@ -4,15 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
- 
-  checkLogin(user: User) : Observable<any> {
-    let url = "http://localhost:8181/login";
-    return this.http.post(url,user);
-    }
-
+  checkLogin(user: User): Observable<any> {
+    let url = 'http://localhost:8181/login';
+    return this.http.post(url, user);
+  }
 }

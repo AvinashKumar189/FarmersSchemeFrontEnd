@@ -4,14 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FarmerService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
-
-  goRegisterSuccess(farmer: Farmer) : Observable<any> {
-    let url = "http://localhost:8181/farmer-register";
-    return this.http.post<Farmer>(url,farmer);
-    }
+  goRegisterSuccess(farmer: Farmer): Observable<any> {
+    let url = 'http://localhost:8181/farmer-register';
+    return this.http.post<Farmer>(url, farmer);
+  }
 }

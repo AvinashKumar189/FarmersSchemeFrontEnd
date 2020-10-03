@@ -4,14 +4,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SellRequestService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
-
-  goSellRequest(sellRequest : SellRequest) : Observable<any> {
-    let url = "http://localhost:8181/place-sell-request";
-    return this.http.post(url,sellRequest);
+  goSellRequest(sellRequest: SellRequest): Observable<any> {
+    let url = 'http://localhost:8181/place-sell-request';
+    return this.http.post(url, sellRequest);
   }
 }
