@@ -22,7 +22,7 @@ export class AfterLoginBidderComponent implements OnInit {
   ngOnInit(): void {
     this.bidderService.fetchAllCrops().subscribe( data =>{
       alert(JSON.stringify(data));
-      this.cropList=data.cropsForSale;
+      this.cropList=data.cropForSale;
     }
 
     )
@@ -45,7 +45,7 @@ export class AfterLoginBidderComponent implements OnInit {
     if(this.liveBid>(this.currentBid+100)&& this.liveBid>this.basePrice){
       this.bidInProcess.sellRequestId=this.id;
       this.bidInProcess.amount=this.liveBid;
-      this.bidInProcess.bidderId=12;
+      this.bidInProcess.bidderId=16;
       //this.bidInProcess.bidderId=Number(sessionStorage.getItem('UserId')); 
       this.bidderService.submitBidForCrop(this.bidInProcess).subscribe( data =>{
         alert(JSON.stringify(data));
