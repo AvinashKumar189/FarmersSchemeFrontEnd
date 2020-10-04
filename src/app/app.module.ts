@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { AfterLoginNavbarComponent } from './after-login-navbar/after-login-navbar.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
     AfterLoginNavbarComponent,
     AdminLoginComponent,
     RegisterSuccessComponent,
+    AdminDashboardComponent,
 
   ],
   imports: [

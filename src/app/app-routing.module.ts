@@ -1,3 +1,4 @@
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { BidderRegistrationComponent } from './bidder-registration/bidder-registration.component';
@@ -19,6 +20,7 @@ import { NgModule } from '@angular/core';
 import { AfterLoginBidderComponent } from './after-login-bidder/after-login-bidder.component';
 
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -38,6 +40,7 @@ const routes: Routes = [
   {path: 'bidder-registration', component:BidderRegistrationComponent},
   {path: 'register-success', component:RegisterSuccessComponent},
   {path: 'after-login-bidder', component:AfterLoginBidderComponent},
+  {path: 'admin-dashboard', component:AdminDashboardComponent}
 
 ];
 
