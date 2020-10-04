@@ -28,9 +28,9 @@ export class BidderService {
       return this.http.get<any>(url);
     }
 
-    submitBidForCrop(bid:BidInProcess): Observable<any>{
+    submitBidForCrop(bidInProcess:BidInProcess): Observable<any>{
       let url = 'http://localhost:8181/place-bid';
-      return this.http.post<any>(url, bid);
+      return this.http.post<any>(url, bidInProcess);
 
     }
 

@@ -27,7 +27,7 @@
         <th>Crop Id</th>
         <th>Crop Name</th>
         <th>Current Bid</th>
-        <th>Enter Amount</th>
+        <th>Base Price</th>
     </tr>
     <tr>
         <td>{{id}}</td>
@@ -40,7 +40,7 @@
   <div class="container form_container" *ngIf="toggle">
     <div class="form">
     <form (ngSubmit)="placeBidForCrop()">
-        <input type = "number" placeholder="Enter bid Amount" name="bidamount" [(ngModel)]="liveprice" >
+        <input type = "number" placeholder="Enter bid Amount" name="bidamount" [(ngModel)]="liveBid" >
         <input type="submit" class="confirmbtn" value="Confirm"/>
     </form>
     </div>
