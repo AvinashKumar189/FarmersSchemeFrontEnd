@@ -13,4 +13,16 @@ export class FarmerService {
     let url = 'http://localhost:8181/farmer-register';
     return this.http.post<Farmer>(url, farmer);
   }
+
+  viewActiveCrops(id:number): Observable<any>{
+    let url = 'http://localhost:8181/view-marketplace?farmerId='+id;
+    return this.http.get<any>(url);
+  }
+
+  viewPreviousBids(id:number): Observable<any>{
+    let url = 'http://localhost:8181/view-previous-bids?sellRequestId='+id;
+    return this.http.get<any>(url);
+
+  }
+
 }
