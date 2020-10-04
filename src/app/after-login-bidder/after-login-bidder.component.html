@@ -34,17 +34,18 @@
         <td>{{name}}</td>
         <td>{{currentBid}}</td>
         <td>{{basePrice}}</td>
-        
-        <div class="container form_container" *ngIf="toggle">
-        <div class="form">
-        <form (ngSubmit)="placeBidForCrop()">
-            <input type = "number" placeholder="Enter bid Amount" name="bidamount" [(ngModel)]="liveprice" >
-            <input type="submit" class="confirmbtn" value="Confirm"/>
-        </form>
-        </div>
-        </div>
     </tr>
   </table>
+
+  <div class="container form_container" *ngIf="toggle">
+    <div class="form">
+    <form (ngSubmit)="placeBidForCrop()">
+        <input type = "number" placeholder="Enter bid Amount" name="bidamount" [(ngModel)]="liveprice" >
+        <input type="submit" class="confirmbtn" value="Confirm"/>
+    </form>
+    </div>
+  </div>
+
 </div>
 
 <app-footer></app-footer>
