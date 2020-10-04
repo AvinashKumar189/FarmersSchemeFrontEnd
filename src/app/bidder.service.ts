@@ -19,12 +19,12 @@ export class BidderService {
     }
 
     fetchAllCrops(): Observable<any>{
-      let url = 'http://localhost:8181/view-crop-list';
+      let url = 'http://localhost:8181/after-login-bidder';
       return this.http.get<any>(url);
     }
 
     fetchCropDetails(id:number): Observable<any>{
-      let url = 'http://localhost:8181/view-crop-details?sellRequestId='+id;
+      let url = 'http://localhost:8181/view-current-bid?sellRequestId='+id;
       return this.http.get<any>(url);
     }
 
