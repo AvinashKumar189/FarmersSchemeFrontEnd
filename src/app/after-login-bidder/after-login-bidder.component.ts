@@ -20,12 +20,11 @@ export class AfterLoginBidderComponent implements OnInit {
   constructor(private bidderService: BidderService, private router: Router) {}
 
   ngOnInit(): void {
+    this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
     this.bidderService.fetchAllCrops().subscribe( data =>{
       alert(JSON.stringify(data));
       this.cropList=data.cropForSale;
-    }
-
-    )
+    });
   }
 
   displayCropForBidding(id: number, name: string, price: number){
@@ -45,17 +44,14 @@ export class AfterLoginBidderComponent implements OnInit {
     if(this.liveBid>(this.currentBid+100)&& this.liveBid>this.basePrice){
       this.bidInProcess.sellRequestId=this.id;
       this.bidInProcess.amount=this.liveBid;
-      this.bidInProcess.bidderId=16;
-      //this.bidInProcess.bidderId=Number(sessionStorage.getItem('UserId')); 
+     // this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
       this.bidderService.submitBidForCrop(this.bidInProcess).subscribe( data =>{
         alert(JSON.stringify(data));
         if(data.status)
           alert(data.statusMessage);
         else 
           alert(data.statusMessage);
-      }
-
-      )
+      });
     }
     else
       alert("Invalid Bid amount!");

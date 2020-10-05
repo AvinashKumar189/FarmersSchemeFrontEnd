@@ -17,14 +17,11 @@ export class MarketplaceComponent implements OnInit {
   constructor(private farmerService: FarmerService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userId=25;
-    //this.userId=Number(sessionStorage.getItem('UserId'));
+    this.userId=Number(sessionStorage.getItem("userId"));
     this.farmerService.viewActiveCrops(this.userId).subscribe( data =>{
       alert(JSON.stringify(data));
       this.cropList=data.cropForSale;
-  }
-  )
-   
+  });   
   }
 
   viewPreviousBidsForCrop(id: number) {
