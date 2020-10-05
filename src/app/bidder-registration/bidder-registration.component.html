@@ -1,101 +1,109 @@
 <app-navigation-bar></app-navigation-bar>
 
 <div class="card">
-  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goRegisterSuccess()">
+  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goRegisterSuccess()"
+    [appMustMatch]="['password', 'confirmPassword']">
 
     <h2>Personal Details</h2>
-      <div class="form">
-        <label for="fullName"><b>Full Name</b></label>
-        <input type="text" placeholder="Enter Full Name" name="fullName" required minlength="4" [(ngModel)]=bidder.fullName #fullName="ngModel">
-        <div *ngIf="fullName.invalid && myForm.submitted">
-          <div *ngIf="fullName.errors.required">
+    <div class="form">
+      <label for="fullName"><b>Full Name</b></label>
+      <input type="text" placeholder="Enter Full Name" name="fullName" required minlength="4"
+        [(ngModel)]=bidder.fullName #fullName="ngModel">
+      <div *ngIf="fullName.invalid && myForm.submitted">
+        <div *ngIf="fullName.errors.required">
           Name is required.
-          </div>
-          <div *ngIf="fullName.errors.minlength">Name must be at least 4 characters long.</div>
         </div>
+        <div *ngIf="fullName.errors.minlength">Name must be at least 4 characters long.</div>
       </div>
-      <div class="form">
-        <label for="contactNo"><b>Contact Number</b></label>
-        <input type="number" placeholder="Enter Contact Number" name="contactNo" required="10" [(ngModel)]=bidder.contactNo #contactNo="ngModel">
-        <div *ngIf="contactNo.invalid && myForm.submitted">
-          <div *ngIf="contactNo.errors.required">
+    </div>
+    <div class="form">
+      <label for="contactNo"><b>Contact Number</b></label>
+      <input type="number" placeholder="Enter Contact Number" name="contactNo" required="10"
+        [(ngModel)]=bidder.contactNo #contactNo="ngModel">
+      <div *ngIf="contactNo.invalid && myForm.submitted">
+        <div *ngIf="contactNo.errors.required">
           Contact no is required.
-          </div>
         </div>
       </div>
-      <div class="form">
-        <label for="emailId"><b>Email Id</b></label>
-        <input type="email" placeholder="Enter Email Id" name="emailId" required minlength="13" [(ngModel)]=bidder.emailId #emailId="ngModel">
-        <div *ngIf="emailId.invalid && myForm.submitted">
-          <div *ngIf="emailId.errors.required">
+    </div>
+    <div class="form">
+      <label for="emailId"><b>Email Id</b></label>
+      <input type="email" placeholder="Enter Email Id" name="emailId" required minlength="13" [(ngModel)]=bidder.emailId
+        #emailId="ngModel">
+      <div *ngIf="emailId.invalid && myForm.submitted">
+        <div *ngIf="emailId.errors.required">
           Email is required.
-          </div>
-          <div *ngIf="emailId.errors.minlength">
+        </div>
+        <div *ngIf="emailId.errors.minlength">
           Email must be at least 13 characters long.
-          </div>
-          </div>
-      </div>
-      
-      <h2>Address Details</h2>
-      <div class="form">
-        <label for="address"><b>Full Address</b></label>
-        <input type="text" placeholder="Address Line 1" name="address" required [(ngModel)]=bidder.address #address="ngModel" />
-        <input type="text" placeholder="Address Line 2" name="address2" />
-        <div *ngIf="address.invalid && myForm.submitted">
-          <div *ngIf="address.errors.required">
-          Address details are required.
-          </div>
         </div>
       </div>
-      <div class="form">
-        <label for="city"><b>City</b></label>
-        <input type="text" placeholder="Enter City" name="city" required [(ngModel)]=bidder.city #city="ngModel">
-        <div *ngIf="city.invalid && myForm.submitted">
-          <div *ngIf="city.errors.required">
-          City is required.
-          </div>
-        </div>
-      </div>
-      <div class="form">
-        <label for="state"><b>State</b></label>
-        <input type="text" placeholder="Enter State" name="state" required [(ngModel)]=bidder.state #state="ngModel">
-        <div *ngIf="state.invalid && myForm.submitted">
-          <div *ngIf="state.errors.required">
-          State is required.
-          </div>
-        </div>
-      </div>
-      <div class="form">
-        <label for="pinCode"><b>Pincode</b></label>
-        <input type="number" placeholder="Enter Pincode" name="pinCode" required [(ngModel)]=bidder.pinCode #pinCode="ngModel">
-        <div *ngIf="pinCode.invalid && myForm.submitted">
-          <div *ngIf="pinCode.errors.required">
-          Pincode is required.
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <h2>Bank Details</h2>
-      <div class="form">
-        <label for="accountNo"><b>Account Number</b></label>
-        <input type="number" placeholder="Enter Account Number" name="accountNo" required="9" [(ngModel)]=bidder.accountNo #accountNo="ngModel">
-        <div *ngIf="accountNo.invalid && myForm.submitted">
-          <div *ngIf="accountNo.errors.required">
+    <h2>Address Details</h2>
+    <div class="form">
+      <label for="address"><b>Full Address</b></label>
+      <input type="text" placeholder="Address Line 1" name="address" required [(ngModel)]=bidder.address
+        #address="ngModel" />
+      <input type="text" placeholder="Address Line 2" name="address2" />
+      <div *ngIf="address.invalid && myForm.submitted">
+        <div *ngIf="address.errors.required">
+          Address details are required.
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <label for="city"><b>City</b></label>
+      <input type="text" placeholder="Enter City" name="city" required [(ngModel)]=bidder.city #city="ngModel">
+      <div *ngIf="city.invalid && myForm.submitted">
+        <div *ngIf="city.errors.required">
+          City is required.
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <label for="state"><b>State</b></label>
+      <input type="text" placeholder="Enter State" name="state" required [(ngModel)]=bidder.state #state="ngModel">
+      <div *ngIf="state.invalid && myForm.submitted">
+        <div *ngIf="state.errors.required">
+          State is required.
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <label for="pinCode"><b>Pincode</b></label>
+      <input type="number" placeholder="Enter Pincode" name="pinCode" required [(ngModel)]=bidder.pinCode
+        #pinCode="ngModel">
+      <div *ngIf="pinCode.invalid && myForm.submitted">
+        <div *ngIf="pinCode.errors.required">
+          Pincode is required.
+        </div>
+      </div>
+    </div>
+
+    <h2>Bank Details</h2>
+    <div class="form">
+      <label for="accountNo"><b>Account Number</b></label>
+      <input type="number" placeholder="Enter Account Number" name="accountNo" required="9" [(ngModel)]=bidder.accountNo
+        #accountNo="ngModel">
+      <div *ngIf="accountNo.invalid && myForm.submitted">
+        <div *ngIf="accountNo.errors.required">
           Account no is required.
-          </div>
         </div>
       </div>
-      <div class="form">
-        <label for="ifsc"><b>IFSC Code</b></label>
-        <input type="text" placeholder="Enter IFSC Code" name="ifsc" required="11" [(ngModel)]=bidder.ifsc #ifsc="ngModel">
-        <div *ngIf="ifsc.invalid && myForm.submitted">
-          <div *ngIf="ifsc.errors.required">
+    </div>
+    <div class="form">
+      <label for="ifsc"><b>IFSC Code</b></label>
+      <input type="text" placeholder="Enter IFSC Code" name="ifsc" required="11" [(ngModel)]=bidder.ifsc
+        #ifsc="ngModel">
+      <div *ngIf="ifsc.invalid && myForm.submitted">
+        <div *ngIf="ifsc.errors.required">
           Ifsc code is required.
-          </div>
         </div>
       </div>
-      
-      <!-- <h2>Document Upload</h2>
+    </div>
+
+    <!-- <h2>Document Upload</h2>
       <div class="form_1">
         <label for="aadhar"><b>aadhar</b></label>
         <input type="file" name="aadhar" [ngModel]="fileContent" #file="ngModel" required>
@@ -114,38 +122,49 @@
         <input type="file" name="traderLicense" [ngModel]="fileContent" #file="ngModel" required>
         <p *ngIf="!file.valid">This field is required!</p>
       </div> -->
-      
-      <h2></h2>
-      <div class="pass">
+
+    <h2></h2>
+    <div class="pass">
       <div class="form">
         <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="*************" name="password" required minlength="8" [(ngModel)]=bidder.password #password="ngModel">
+        <input type="password" placeholder="Password" name="password" required minlength="8" [(ngModel)]=bidder.password
+          #password="ngModel">
         <div *ngIf="password.invalid && myForm.submitted">
           <div *ngIf="password.errors.required">
-          Password is required.
+            Password is required.
+          </div>
+          <div *ngIf="password.errors.minlength">
+            Password must be atleast 8 digits long.
           </div>
         </div>
       </div>
+
       <div class="form">
-        <label for="password"><b>Confirm Password</b></label>
-        <input type="password" placeholder="*************" name="password" required [(ngModel)]=bidder.password #password="ngModel">
+        <label for="confirmPassword"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" required minlength="8"
+          [(ngModel)]=bidder.confirmPassword #confirmPassword="ngModel">
+        <div *ngIf="myForm.submitted && confirmPassword.invalid">
+          <div *ngIf="confirmPassword.errors.required">
+            Confirm Password is required.
+          </div>
+          <div *ngIf="confirmPassword.errors.mustMatch">
+            Password must match.
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="form">
-      <button (click) = 'goRegisterSuccess()' type="submit" class="registerbtn">Register</button>
+      <!-- <button (click)='goRegisterSuccess()' type="submit" class="registerbtn">Register</button> -->
+      <button type="submit" class="registerbtn">Register</button>
       <button type="reset" class="resetbtn" value="reset">Reset</button>
     </div>
   </form>
-  <div *ngIf="data">
-    {{data.status}} <br/>
-    {{data.statusMessage}} <br/>
-  </div>
- </div>
 
- <div *ngIf="data">
-  {{data.status}} <br/>
-  {{data.statusMessage}} <br/>
+  <div *ngIf="data">
+    {{data.status}} <br />
+    {{data.statusMessage}} <br />
+  </div>
 </div>
 
 <app-footer></app-footer>

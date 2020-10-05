@@ -1,118 +1,145 @@
 <app-navigation-bar></app-navigation-bar>
 
-<div class="card">  
-  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goRegisterSuccess()">             
+<div class="card">
+  <form #myForm="ngForm" (ngSubmit)="myForm.form.valid && goRegisterSuccess()"
+    [appMustMatch]="['password', 'confirmPassword']">
     <h2>Personal Details</h2>
-      <div class="form">      
-        <label for="fullName"><b>Full Name</b></label>  
-        <input type="text" placeholder="Enter Full Name" name="fullName" required minlength="4" [(ngModel)]=farmer.fullName #fullName="ngModel"/>
-        <div *ngIf="myForm.submitted && fullName.invalid">
-          <div *ngIf="fullName.errors.required">Name is required.</div>
-          <div *ngIf="fullName.errors.minlength">Name must be atleast 4 characters long.</div>
+    <div class="form">
+      <label for="fullName"><b>Full Name</b></label>
+      <input type="text" placeholder="Enter Full Name" name="fullName" required minlength="4"
+        [(ngModel)]="farmer.fullName" #fullName="ngModel" />
+      <div *ngIf="myForm.submitted && fullName.invalid">
+        <div *ngIf="fullName.errors.required">Name is required.</div>
+        <div *ngIf="fullName.errors.minlength">
+          Name must be atleast 4 characters long.
         </div>
       </div>
+    </div>
 
-      <div class="form">
-        <label for="contactNo"><b>Contact Number</b></label>
-        <input type="number" placeholder="Enter Contact Number" name="contactNo" required minlength="10" [(ngModel)]=farmer.contactNo #contactNo="ngModel"/>
-        <div *ngIf="myForm.submitted && contactNo.invalid">
-          <div *ngIf="contactNo.errors.required">Contact Number is required.</div>
-          <div *ngIf="contactNo.errors.minlength">Contact Number must be atleast 10 digits long.</div>
+    <div class="form">
+      <label for="contactNo"><b>Contact Number</b></label>
+      <input type="number" placeholder="Enter Contact Number" name="contactNo" required minlength="10"
+        [(ngModel)]="farmer.contactNo" #contactNo="ngModel" />
+      <div *ngIf="myForm.submitted && contactNo.invalid">
+        <div *ngIf="contactNo.errors.required">Contact Number is required.</div>
+        <div *ngIf="contactNo.errors.minlength">
+          Contact Number must be atleast 10 digits long.
         </div>
       </div>
+    </div>
 
-      <div class="form">
-        <label for="emailId"><b>Email Id</b></label>
-        <input type="email" placeholder="Enter Email Id" name="emailId" required minlength="10" [(ngModel)]=farmer.emailId #emailId="ngModel"/>
-        <div *ngIf="myForm.submitted && emailId.invalid">
-          <div *ngIf="emailId.errors.required">Email is required.</div>
-          <div *ngIf="emailId.errors.minlength">Email must be atleast 10 characters long.</div>
+    <div class="form">
+      <label for="emailId"><b>Email Id</b></label>
+      <input type="email" placeholder="Enter Email Id" name="emailId" required minlength="10"
+        [(ngModel)]="farmer.emailId" #emailId="ngModel" />
+      <div *ngIf="myForm.submitted && emailId.invalid">
+        <div *ngIf="emailId.errors.required">Email is required.</div>
+        <div *ngIf="emailId.errors.minlength">
+          Email must be atleast 10 characters long.
         </div>
       </div>
-      
-      <h2>Address Details</h2>
-      <div class="form">
-        <label for="address"><b>Full Address</b></label>
-        <input type="text" placeholder="Address Line 1" name="address" required [(ngModel)]=farmer.address #address="ngModel"/>
-        <input type="text" placeholder="Address Line 2" name="address2">
-        <div *ngIf="myForm.submitted && address.invalid">
-          <div *ngIf="address.errors.required">Full Address is required.</div>
+    </div>
+
+    <h2>Address Details</h2>
+    <div class="form">
+      <label for="address"><b>Full Address</b></label>
+      <input type="text" placeholder="Address Line 1" name="address" required [(ngModel)]="farmer.address"
+        #address="ngModel" />
+      <input type="text" placeholder="Address Line 2" name="address2" />
+      <div *ngIf="myForm.submitted && address.invalid">
+        <div *ngIf="address.errors.required">Full Address is required.</div>
+      </div>
+    </div>
+
+    <div class="form">
+      <label for="city"><b>City</b></label>
+      <input type="text" placeholder="Enter City" name="city" required [(ngModel)]="farmer.city" #city="ngModel" />
+      <div *ngIf="myForm.submitted && city.invalid">
+        <div *ngIf="city.errors.required">City is required.</div>
+      </div>
+    </div>
+
+    <div class="form">
+      <label for="state"><b>State</b></label>
+      <input type="text" placeholder="Enter State" name="state" required [(ngModel)]="farmer.state" #state="ngModel" />
+      <div *ngIf="myForm.submitted && state.invalid">
+        <div *ngIf="state.errors.required">State is required.</div>
+      </div>
+    </div>
+
+    <div class="form">
+      <label for="pinCode"><b>Pincode</b></label>
+      <input type="number" placeholder="Enter Pincode" name="pinCode" required minlength="6"
+        [(ngModel)]="farmer.pinCode" #pinCode="ngModel" />
+      <div *ngIf="myForm.submitted && pinCode.invalid">
+        <div *ngIf="pinCode.errors.required">PinCode is required.</div>
+        <div *ngIf="contactNo.errors.minlength">
+          PinCode must be atleast 6 digits long.
         </div>
       </div>
+    </div>
 
-      <div class="form">
-        <label for="city"><b>City</b></label>
-        <input type="text" placeholder="Enter City" name="city" required [(ngModel)]=farmer.city #city="ngModel"/>
-        <div *ngIf="myForm.submitted && city.invalid">
-          <div *ngIf="city.errors.required">City is required.</div>
-        </div>
+    <h2>Land Details</h2>
+
+    <div class="form">
+      <label for="landArea"><b>Area</b></label>
+      <input type="text" placeholder="Enter Area" name="landArea" required [(ngModel)]="farmer.landArea"
+        #landArea="ngModel" />
+      <div *ngIf="myForm.submitted && landArea.invalid">
+        <div *ngIf="landArea.errors.required">Area is required.</div>
       </div>
+    </div>
 
-      <div class="form">
-        <label for="state"><b>State</b></label>
-        <input type="text" placeholder="Enter State" name="state" required [(ngModel)]=farmer.state #state="ngModel"/>
-        <div *ngIf="myForm.submitted && state.invalid">
-          <div *ngIf="state.errors.required">State is required.</div>
-        </div>
-      </div>
-
-      <div class="form">
-        <label for="pinCode"><b>Pincode</b></label>
-        <input type="number" placeholder="Enter Pincode" name="pinCode" required minlength="6" [(ngModel)]=farmer.pinCode #pinCode="ngModel"/>
-        <div *ngIf="myForm.submitted && pinCode.invalid">
-          <div *ngIf="pinCode.errors.required">PinCode is required.</div>
-          <div *ngIf="contactNo.errors.minlength">PinCode must be atleast 6 digits long.</div>
-        </div>
-      </div>
-
-      <h2>Land Details</h2>
-
-      <div class="form">
-        <label for="landArea"><b>Area</b></label>
-        <input type="text" placeholder="Enter Area" name="landArea" required [(ngModel)]=farmer.landArea #landArea="ngModel"/>
-        <div *ngIf="myForm.submitted && landArea.invalid">
-          <div *ngIf="landArea.errors.required">Area is required.</div>
-        </div>
-      </div>
-
-      <div class="form">
+    <div class="form">
       <label for="landAddress"><b>Address</b></label>
-        <input type="text" placeholder="Land Address" name="landAddress" required [(ngModel)]=farmer.landAddress #landAddress="ngModel"/>
-        <div *ngIf="myForm.submitted && landAddress.invalid">
-          <div *ngIf="landAddress.errors.required">Land Address is required.</div>
+      <input type="text" placeholder="Land Address" name="landAddress" required [(ngModel)]="farmer.landAddress"
+        #landAddress="ngModel" />
+      <div *ngIf="myForm.submitted && landAddress.invalid">
+        <div *ngIf="landAddress.errors.required">Land Address is required.</div>
+      </div>
+    </div>
+
+    <div class="form">
+      <label for="landPincode"><b>Pincode</b></label>
+      <input type="number" placeholder="Enter Pincode" name="landPincode" required minlength="6"
+        [(ngModel)]="farmer.landPincode" #landPincode="ngModel" />
+      <div *ngIf="myForm.submitted && landPincode.invalid">
+        <div *ngIf="landPincode.errors.required">
+          Land PinCode of 6 Digits is required.
+        </div>
+        <div *ngIf="contactNo.errors.minlength">
+          PinCode must be atleast 6 digits long.
         </div>
       </div>
+    </div>
 
-      <div class="form">
-        <label for="landPincode"><b>Pincode</b></label>
-        <input type="number" placeholder="Enter Pincode" name="landPincode" required minlength="6" [(ngModel)]=farmer.landPincode #landPincode="ngModel"/>
-        <div *ngIf="myForm.submitted && landPincode.invalid">
-          <div *ngIf="landPincode.errors.required">Land PinCode of 6 Digits is required.</div>
-          <div *ngIf="contactNo.errors.minlength">PinCode must be atleast 6 digits long.</div>
+    <h2>Bank Details</h2>
+
+    <div class="form">
+      <label for="accountNo"><b>Account Number</b></label>
+      <input type="number" placeholder="Enter Account Number" name="accountNo" required minlength="9"
+        [(ngModel)]="farmer.accountNo" #accountNo="ngModel" />
+      <div *ngIf="myForm.submitted && accountNo.invalid">
+        <div *ngIf="accountNo.errors.required">Account Number is required.</div>
+        <div *ngIf="accountNo.errors.minlength">
+          Account Number must be atleast 9 digits long.
         </div>
       </div>
+    </div>
 
-      <h2>Bank Details</h2>
-
-      <div class="form">
-        <label for="accountNo"><b>Account Number</b></label>
-        <input type="number" placeholder="Enter Account Number" name="accountNo" required minlength="9" [(ngModel)]=farmer.accountNo #accountNo="ngModel"/>
-        <div *ngIf="myForm.submitted && accountNo.invalid">
-          <div *ngIf="accountNo.errors.required">Account Number is required.</div>
-          <div *ngIf="accountNo.errors.minlength">Account Number must be atleast 9 digits long.</div>
+    <div class="form">
+      <label for="ifsc"><b>IFSC Code</b></label>
+      <input type="text" placeholder="Enter IFSC Code" name="ifsc" required minlength="11" [(ngModel)]="farmer.ifsc"
+        #ifsc="ngModel" />
+      <div *ngIf="myForm.submitted && ifsc.invalid">
+        <div *ngIf="ifsc.errors.required">IFSC is required.</div>
+        <div *ngIf="ifsc.errors.minlength">
+          IFSC must be atleast 11 digits long.
         </div>
       </div>
+    </div>
 
-      <div class="form">
-        <label for="ifsc"><b>IFSC Code</b></label>
-        <input type="text" placeholder="Enter IFSC Code" name="ifsc" required minlength="11" [(ngModel)]=farmer.ifsc #ifsc="ngModel"/> 
-        <div *ngIf="myForm.submitted && ifsc.invalid">
-          <div *ngIf="ifsc.errors.required">IFSC is required.</div>
-          <div *ngIf="ifsc.errors.minlength">IFSC must be atleast 11 digits long.</div>
-        </div>
-      </div>
-
-      <!-- <h2>Document Upload</h2>
+    <!-- <h2>Document Upload</h2>
       
       <div class="form_1">
         <label for="aadhar"><b>Aadhar</b></label>
@@ -129,40 +156,47 @@
         <input type="file" name="certificate" [ngModel]="fileContent" #file="ngModel" required/>
         <p *ngIf="!file.valid">This field is required!</p>
       </div> -->
-     
-      <h2></h2>
-      <div class="pass">
+
+    <h2></h2>
+    <div class="pass">
       <div class="form">
         <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Password" name="password" required minlength="8" [(ngModel)]=farmer.password #password="ngModel"/>
+        <input type="password" placeholder="Password" name="password" required minlength="8"
+          [(ngModel)]="farmer.password" #password="ngModel" />
         <div *ngIf="myForm.submitted && password.invalid">
           <div *ngIf="password.errors.required">Password is required.</div>
-          <div *ngIf="password.errors.minlength">Password must be atleast 8 digits long.</div>
+          <div *ngIf="password.errors.minlength">
+            Password must be atleast 8 digits long.
+          </div>
         </div>
       </div>
-      
+
       <div class="form">
         <label for="confirmPassword"><b>Confirm Password</b></label>
-        <input type="password" placeholder="Confirm Password" name="confirmPassword" required minlength="8" [(ngModel)]=farmer.confirmPassword #confirmPassword="ngModel"/>
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" required minlength="8"
+          [(ngModel)]="farmer.confirmPassword" #confirmPassword="ngModel" />
         <div *ngIf="myForm.submitted && confirmPassword.invalid">
-          <div *ngIf="confirmPassword.errors.required">Password is required.</div>
-          <div *ngIf="confirmPassword.errors.minlength">Password must be atleast 8 digits long.</div>
+          <div *ngIf="confirmPassword.errors.required">
+            Confirm Password is required.
+          </div>
+          <div *ngIf="confirmPassword.errors.mustMatch">
+            Password must match.
+          </div>
         </div>
       </div>
-      </div>
-       
-      <div class="form">
+    </div>
+
+    <div class="form">
       <!-- <button (click) = 'goRegisterSuccess()' type="submit" class="registerbtn">Register</button> -->
       <button type="submit" class="registerbtn">Register</button>
       <button type="reset" class="resetbtn" value="reset">Reset</button>
-      </div>
-    </form>  
-
-    <div *ngIf="data">
-      {{data.status}} <br/>
-      {{data.statusMessage}} <br/>
     </div>
+  </form>
 
-</div> 
+  <div *ngIf="data">
+    {{ data.status }} <br />
+    {{ data.statusMessage }} <br />
+  </div>
+</div>
 
 <app-footer></app-footer>

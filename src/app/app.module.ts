@@ -24,6 +24,7 @@ import { AfterLoginNavbarComponent } from './after-login-navbar/after-login-navb
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { MustMatchDirective } from './must-match.directive';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AdminLoginComponent,
     RegisterSuccessComponent,
     AdminDashboardComponent,
+    MustMatchDirective,
 
   ],
   imports: [
