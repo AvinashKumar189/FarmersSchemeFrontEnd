@@ -25,4 +25,9 @@ export class FarmerService {
 
   }
 
+  viewSoldHistory(id:number): Observable<any>{
+    let url = 'http://localhost:8181/sold-crop-history?farmerId='+id;
+    return this.http.get<any>(url);
+  }
+
 }

@@ -34,7 +34,6 @@ export class MarketplaceComponent implements OnInit {
     )
   }
 
-  // this.marketplace=[ new Marketplace(101, 'Rice', 'Mohit', 50 ), new Marketplace(102, 'Tomato', 'Ram', 30 ), new Marketplace(103, 'Rice', 'Suresh', 50,)];
 }
 
 export class CropDetails{
