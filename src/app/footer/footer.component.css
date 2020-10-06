@@ -1,7 +1,79 @@
-.footer {
+/* .footer {
   padding: 20px;
   text-align: center;
   background: #ddd;
   margin: 1rem 4rem;
   font-family: 'Montserrat';
+} */
+
+*{
+  text-decoration: none;
+  font-family: 'Montserrat';
+}
+
+.footer{
+  display: block;
+  overflow: hidden;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  background-color: #228b22;
+  margin-left : 4rem;
+  margin-right: 4rem;
+  height: 210px;
+}
+.inner-footer{
+
+  display: block;
+  margin: 0 auto;
+  width: 1100px;
+  height: 100%;
+}
+.inner-footer .footer-one{
+  margin-right: 10px;
+  float: left;
+  height: 100%;
+}
+
+.inner-footer .footer-one h1{
+  font-size: 25px;
+  color: white;
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.inner-footer img {
+  height: 80px;
+  padding-right: 10px;
+}
+.inner-footer .footer-third{
+  margin-right: 10px;
+  float: right;
+  height: 100%;
+}
+
+.inner-footer .footer-third h1{
+  font-size: 25px;
+  color: white;
+  display: block;
+  width: 100%;
+
+}
+.inner-footer .footer-third p{
+  font-size: 18px;
+  color: white;
+  display: block;
+  font-weight: 200;
+  width: 100%;
+ 
+}
+
+
+.footer-block2 {
+  padding: 8px;
+  text-align: center;
+  color: #fdfdfd;
+  text-align: center;
+  background: rgb(0, 0, 0);
+  margin-left : 4rem;
+  margin-right: 4rem;
 }
