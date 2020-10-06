@@ -13,6 +13,7 @@ export class AdminDashboardComponent implements OnInit {
   bidderList:Bidder[];
   cropList:SellRequest[];
   bidList:BiddingRequest[];
+  id:number;
 
   constructor(private adminService: AdminService, private router: Router) { }
 
@@ -26,8 +27,42 @@ export class AdminDashboardComponent implements OnInit {
     }
 
     )
+  }
 
+  approveFarmer(id: number){
+    this.id=id;
+    this.adminService.approveFarmer(this.id).subscribe( data=>{
+      alert(JSON.stringify(data));
+    }
 
+    )
+  }
+
+  approveBidder(id: number){
+    this.id=id;
+    this.adminService.approveBidder(this.id).subscribe( data=>{
+      alert(JSON.stringify(data));
+    }
+
+    )
+  }
+
+  approveSellRequest(id: number){
+    this.id=id;
+    this.adminService.approveSellRequest(this.id).subscribe( data=>{
+      alert(JSON.stringify(data));
+    }
+
+    )
+  }
+
+  approveBiddingRequest(id: number){
+    this.id=id;
+    this.adminService.approveSellRequest(this.id).subscribe( data=>{
+      alert(JSON.stringify(data));
+    }
+
+    )
   }
 
 }
