@@ -1,22 +1,17 @@
 <app-after-login-navbar></app-after-login-navbar>
 
 <div class="card">
-  <h2>Farmer</h2>
+  <h2>Farmers</h2>
     <table id="t01">
       <tr>
         <th>Farmer Id</th>
         <th>Full Name</th>
         <th>Contact No</th>
         <th>Email Id</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Pin Code</th>
-        <th>Land Address</th>
         <th>Land Area</th>
-        <th>Land Pincode</th>
         <th>Account No</th>
         <th>IFSC</th>
+        <th>Approved Status</th>
       </tr> 
       
       <tr *ngFor="let f of farmerList">           
@@ -24,23 +19,17 @@
         <td>{{f.fullName}}</td>
         <td>{{f.contactNo}}</td>
         <td>{{f.emailId}}</td>
-        <td>{{f.address}}</td>
-        <td>{{f.city}}</td>
-        <td>{{f.state}}</td>
-        <td>{{f.pinCode}}</td>
-        <td>{{f.landAddress}}</td>
         <td>{{f.landArea}}</td>
-        <td>{{f.landPincode}}</td>
         <td>{{f.accountNo}}</td>
         <td>{{f.ifsc}}</td>
         <td>
-          <a><button class="btn" type="submit" (click)= "approveFarmer(f.id)">{{farmerApproved}}</button></a>
+          <a><button class="btn" type="submit" (click)= "approveFarmer(f.id)">{{f.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
         </td>
       </tr>
   
     </table><br/>
  
-    <h2>Bidder</h2>
+    <h2>Bidders</h2>
 
     <table id="t01">
       <tr>
@@ -48,12 +37,9 @@
         <th>Full Name</th>
         <th>Contact No</th>
         <th>Email Id</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Pin Code</th>
         <th>Account No</th>
         <th>IFSC</th>
+        <th>Approved Status</th>
       </tr>  
 
 
@@ -62,23 +48,16 @@
         <td>{{b.fullName}}</td>
         <td>{{b.contactNo}}</td>
         <td>{{b.emailId}}</td>
-        <td>{{b.address}}</td>
-        <td>{{b.city}}</td>
-        <td>{{b.state}}</td>
-        <td>{{b.pinCode}}</td>
-        <td>{{b.landAddress}}</td>
-        <td>{{b.landArea}}</td>
-        <td>{{b.landPincode}}</td>
         <td>{{b.accountNo}}</td>
         <td>{{b.ifsc}}</td>
         <td>
-          <a><button class="btn" type="submit" (click)= "approveBidder(b.id)">{{bidderApproved}}</button></a>
+          <a><button class="btn" type="submit" (click)= "approveBidder(b.id)">{{b.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
         </td>
       </tr>
   
     </table><br/>
 
-    <h2>Sell Request</h2>
+    <h2>Sell Requests</h2>
 
     <table id="t01">
       <tr>
@@ -86,34 +65,25 @@
         <th>Request Date</th>
         <th>Crop Type</th>
         <th>Crop Name</th>
-        <th>Quantity</th>
-        <th>Base Price</th>
-        <th>Fertilizer Type</th>
-        <th>Selling DeadLine</th>
+        <th>Selling Deadline</th>
         <th>Bidding DeadLine</th>
-        <th>Bidding Status</th>
         <th>Approved Status</th>
       </tr>  
 
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
+      <tr *ngFor="let sr of cropList">           
+        <td>{{sr.requestId}}</td>
+        <td>{{sr.requestDate}}</td>
+        <td>{{sr.cropType}}</td>
+        <td>{{sr.cropName}}</td>
+        <td>{{sr.sellingDeadline}}</td>
+        <td>{{sr.biddingDeadline}}</td>
         <td>
-          <a><button class="btn" type="submit" >Approve</button></a>
+          <a><button class="btn" type="submit" (click)= "approveSellRequest(sr.requestId)">{{sr.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
         </td>
       </tr>
-  
     </table><br/>
 
-    <h2>Bidding Request</h2>
+    <h2>Bidding Requests</h2>
 
     <table id="t01">
       <tr>
@@ -121,16 +91,18 @@
         <th>Bid Amount</th>
         <th>Bid Date</th>
         <th>Approved Status</th>
-      </tr>  
-
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
+      </tr>
+      
+      <tr *ngFor="let br of bidList">           
+        <td>{{br.id}}</td>
+        <td>{{br.amount}}</td>
+        <td>{{br.bidDate}}</td>
         <td>
-          <a><button class="btn" type="submit" >Approve</button></a>
+          <a><button class="btn" type="submit" (click)= "approveBiddingRequest(br.id)">{{br.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
         </td>
       </tr>
+
+      
   
     </table><br/>
     </div>

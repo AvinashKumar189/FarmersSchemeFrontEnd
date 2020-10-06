@@ -19,7 +19,7 @@
   background-color: #228b22;
   margin-left : 4rem;
   margin-right: 4rem;
-  height: 210px;
+  height: 200px;
 }
 .inner-footer{
 
@@ -59,7 +59,7 @@
 
 }
 .inner-footer .footer-third p{
-  font-size: 18px;
+  font-size: 15px;
   color: white;
   display: block;
   font-weight: 200;

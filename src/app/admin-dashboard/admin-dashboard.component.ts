@@ -13,7 +13,6 @@ export class AdminDashboardComponent implements OnInit {
   bidderList:Bidder[];
   cropList:SellRequest[];
   bidList:BiddingRequest[];
-  farmerApproved:string="Approve";
 
   constructor(private adminService: AdminService, private router: Router) { }
 
