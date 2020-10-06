@@ -6,16 +6,28 @@
 </div>
 
 <div class="card">
+    <form #myForm="ngForm" (ngSubmit)="myForm.valid && checkAdminLogin()">
     <div class="form_container">
+        <label for="email"><b>Username</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required [(ngModel)]=user.email #email="ngModel">
+        <div *ngIf="myForm.submitted && email.invalid">
+        <div *ngIf="email.errors.required">User Name is required.</div>
+        </div>
+      
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required [(ngModel)]=user.password #password="ngModel">
+        <div *ngIf="myForm.submitted && password.invalid">
+        <div *ngIf="password.errors.required">Password is required.</div>
+        </div>
 
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname">
+        <button (Click)='checkAdminLogin()' type="submit" class="loginbtn"><a>Login</a></button>
       
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw">
-      
-        <button type="submit" class="loginbtn"><a href="after_login_farmer.html">Login</a></button>
-      
+    </div>
+    </form>
+
+    <div *ngIf="data">
+        {{data.status}} <br/>
+        {{data.statusMessage}} <br/>
     </div>
 </div>
 

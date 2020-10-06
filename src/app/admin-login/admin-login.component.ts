@@ -1,3 +1,5 @@
+import { AdminService } from './../admin.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router, private adminService: AdminService) { }
+  user : User = new User();
+  data : any;
+  loginFailed : boolean;
+
+  checkAdminLogin(){
+    alert(JSON.stringify(this.user));
+    this.adminService.adminLogin(this.user).subscribe(response => {
+      this.data = response;
+      alert(JSON.stringify(this.data));
+      if(this.data.status == true) {
+        sessionStorage.setItem("userId",response.id);
+        this.router.navigate(['/admin-dashboard']);
+      }
+
+      else {
+        this.loginFailed = true;
+      }
+    }); 
+  }
 
   ngOnInit(): void {
   }
 
+}
+export class User {
+  email : String;
+  password : String;
 }
