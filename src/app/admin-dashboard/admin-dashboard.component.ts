@@ -79,6 +79,7 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   setBiddingDeadline(){
+    if(this.biddingEndDate>this.biddingStartDate && this.biddingEndDate<this.sellingDeadline){
     this.crop.biddingDeadline=this.biddingEndDate;   
     this.adminService.setBiddingDeadline(this.crop).subscribe( data=>{
       alert(JSON.stringify(data));
@@ -89,6 +90,18 @@ export class AdminDashboardComponent implements OnInit {
     }
     );
     this.toggle=!this.toggle;
+  }
+  else{
+    alert("Enter proper bidding deadline!");
+  }
+}
+
+  closeBidding(id: number){
+    this.id=id;
+    this.adminService.closeBiddingForCrop(this.id).subscribe( data=>{
+      alert(JSON.stringify(data));
+    }
+    )
   }
 
 

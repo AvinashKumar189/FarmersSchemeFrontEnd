@@ -45,6 +45,11 @@ export class AdminService {
     return this.http.post<any>(url, crop);
   }
 
+  closeBiddingForCrop(id:number): Observable<any> {
+    let url = 'http://localhost:8181/close-bidding?requestId='+id;
+    return this.http.get<any>(url);
+  }
+
 
 
 }

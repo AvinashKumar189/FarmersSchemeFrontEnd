@@ -68,6 +68,7 @@
         <th>Selling Deadline</th>
         <th>Bidding DeadLine</th>
         <th>Approved Status</th>
+        <th>Bidding Status</th>
       </tr>  
 
       <tr *ngFor="let sr of cropList">           
@@ -81,6 +82,9 @@
         </td>
         <td>
           <a><button class="btn" type="submit" (click)= "approveSellRequest(sr.requestId)">{{sr.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
+        </td>
+        <td>
+          <a><button class="btn" type="submit" (click)= "closeBidding(sr.requestId)">{{sr.biddingStatus=='O'? 'Close Bidding':'Bidding Closed'}}</button></a>
         </td>
       </tr>
     </table><br/>
