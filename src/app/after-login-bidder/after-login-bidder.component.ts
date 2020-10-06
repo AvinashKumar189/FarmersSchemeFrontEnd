@@ -44,7 +44,7 @@ export class AfterLoginBidderComponent implements OnInit {
     if(this.liveBid>(this.currentBid+100)&& this.liveBid>this.basePrice){
       this.bidInProcess.sellRequestId=this.id;
       this.bidInProcess.amount=this.liveBid;
-     // this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
+     //this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
       this.bidderService.submitBidForCrop(this.bidInProcess).subscribe( data =>{
         alert(JSON.stringify(data));
         if(data.status)

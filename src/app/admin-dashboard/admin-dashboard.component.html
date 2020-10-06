@@ -17,27 +17,24 @@
         <th>Land Pincode</th>
         <th>Account No</th>
         <th>IFSC</th>
-        <th>Password</th>
-        <th>Approved Status</th>
-      </tr>  
-
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
+      </tr> 
+      
+      <tr *ngFor="let f of farmerList">           
+        <td>{{f.id}}</td>
+        <td>{{f.fullName}}</td>
+        <td>{{f.contactNo}}</td>
+        <td>{{f.emailId}}</td>
+        <td>{{f.address}}</td>
+        <td>{{f.city}}</td>
+        <td>{{f.state}}</td>
+        <td>{{f.pinCode}}</td>
+        <td>{{f.landAddress}}</td>
+        <td>{{f.landArea}}</td>
+        <td>{{f.landPincode}}</td>
+        <td>{{f.accountNo}}</td>
+        <td>{{f.ifsc}}</td>
         <td>
-          <a><button class="btn" type="submit">Approve</button></a>
+          <a><button class="btn" type="submit" (click)= "approveFarmer(f.id)">{{farmerApproved}}</button></a>
         </td>
       </tr>
   
@@ -57,24 +54,25 @@
         <th>Pin Code</th>
         <th>Account No</th>
         <th>IFSC</th>
-        <th>Password</th>
-        <th>Approved Status</th>
       </tr>  
 
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
+
+      <tr *ngFor="let b of bidderList">           
+        <td>{{b.id}}</td>
+        <td>{{b.fullName}}</td>
+        <td>{{b.contactNo}}</td>
+        <td>{{b.emailId}}</td>
+        <td>{{b.address}}</td>
+        <td>{{b.city}}</td>
+        <td>{{b.state}}</td>
+        <td>{{b.pinCode}}</td>
+        <td>{{b.landAddress}}</td>
+        <td>{{b.landArea}}</td>
+        <td>{{b.landPincode}}</td>
+        <td>{{b.accountNo}}</td>
+        <td>{{b.ifsc}}</td>
         <td>
-          <a><button class="btn" type="submit" >Approve</button></a>
+          <a><button class="btn" type="submit" (click)= "approveBidder(b.id)">{{bidderApproved}}</button></a>
         </td>
       </tr>
   
