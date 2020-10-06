@@ -19,7 +19,7 @@ export class AdminLoginComponent implements OnInit {
     this.adminService.adminLogin(this.user).subscribe(response => {
       this.data = response;
       alert(JSON.stringify(this.data));
-      if(this.data.status == true) {
+      if(this.data.status==true) {
         sessionStorage.setItem("userId",response.id);
         this.router.navigate(['/admin-dashboard']);
       }
