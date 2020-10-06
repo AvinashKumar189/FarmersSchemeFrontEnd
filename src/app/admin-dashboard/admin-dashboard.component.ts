@@ -14,6 +14,12 @@ export class AdminDashboardComponent implements OnInit {
   cropList:SellRequest[];
   bidList:BiddingRequest[];
   id:number;
+  toggle: boolean=false;
+  biddingDeadlineStatus:string="Set deadline";
+  biddingEndDate:Date;
+  sellingDeadline:Date;
+  biddingStartDate:Date;
+  crop: Crop=new Crop();
 
   constructor(private adminService: AdminService, private router: Router) { }
 
@@ -64,6 +70,27 @@ export class AdminDashboardComponent implements OnInit {
 
     )
   }
+
+  openBiddingDeadlineForm(id: number, requestDate: Date, sellingDeadline: Date){
+    this.toggle=!this.toggle;
+    this.crop.requestId=id;
+    this.biddingStartDate=requestDate;
+    this.sellingDeadline=sellingDeadline;
+  }
+
+  setBiddingDeadline(){
+    this.crop.biddingDeadline=this.biddingEndDate;   
+    this.adminService.setBiddingDeadline(this.crop).subscribe( data=>{
+      alert(JSON.stringify(data));
+      if(data.status)
+        alert(data.statusMessage);
+      else 
+        alert(data.statusMessage);
+    }
+    );
+    this.toggle=!this.toggle;
+  }
+
 
 }
 
@@ -132,4 +159,10 @@ export class BiddingRequest{
   approvedStatus:string;
   finalStatus:string;
 }
+
+export class Crop{
+  requestId:number;
+  biddingDeadline:Date;
+}
+
 

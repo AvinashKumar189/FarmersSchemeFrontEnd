@@ -68,8 +68,9 @@ export class CropDetails{
 
 export class BidInProcess{
 
-  sellRequestId: number;
+  sellRequestId:number;
   bidderId:number;
   amount:number;
   
 }
+

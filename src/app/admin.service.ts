@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './admin-login/admin-login.component';
+import { Crop } from './admin-dashboard/admin-dashboard.component';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,11 @@ export class AdminService {
   approveBiddingRequest(id:number): Observable<any> {
     let url='http://localhost:8181/approve-bidding-request?requestId='+id;
     return this.http.get<any>(url);
+  }
+
+  setBiddingDeadline(crop:Crop): Observable<any> {
+    let url = 'http://localhost:8181/set-bidding-deadline';
+    return this.http.post<any>(url, crop);
   }
 
 

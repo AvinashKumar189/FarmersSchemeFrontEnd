@@ -76,12 +76,23 @@
         <td>{{sr.cropType}}</td>
         <td>{{sr.cropName}}</td>
         <td>{{sr.sellingDeadline}}</td>
-        <td>{{sr.biddingDeadline}}</td>
+        <td>
+          <a><button class="btn" type="submit" (click)= "openBiddingDeadlineForm(sr.requestId,sr.requestDate,sr.sellingDeadline)">{{biddingDeadlineStatus}}</button></a>
+        </td>
         <td>
           <a><button class="btn" type="submit" (click)= "approveSellRequest(sr.requestId)">{{sr.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
         </td>
       </tr>
     </table><br/>
+
+    <div class="container form_container" *ngIf="toggle">
+      <div class="form">
+      <form (ngSubmit)="setBiddingDeadline()">
+          <input type = "date" placeholder="Bidding DeadLine" name="biddingDeadline" [(ngModel)]="biddingEndDate">
+          <input type="submit" class="confirmbtn" value="Confirm"/>
+      </form>
+      </div>
+    </div>
 
     <h2>Bidding Requests</h2>
 
