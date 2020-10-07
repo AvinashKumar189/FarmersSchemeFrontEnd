@@ -46,5 +46,10 @@ export class Bidder{
   traderLicense: string;
   password: string;
   confirmPassword: string;
+  approvedStatus: string;
+  
+  constructor(){
+    this.approvedStatus='N';
+  }
 }
 

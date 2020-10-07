@@ -43,7 +43,7 @@ export class AfterLoginBidderComponent implements OnInit {
   }
 
   placeBidForCrop() {
-    if (this.liveBid > (this.currentBid + 100) && this.liveBid > this.basePrice) {
+      if (this.currentBid==null? this.liveBid>this.basePrice:this.liveBid>(this.currentBid+100)) {
       this.bidInProcess.sellRequestId = this.id;
       this.bidInProcess.amount = this.liveBid;
       //this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
@@ -55,9 +55,9 @@ export class AfterLoginBidderComponent implements OnInit {
         else
           alert(data.statusMessage);
       });
-    }
-    else
-      alert("Invalid Bid amount!");
+      }
+      else
+        alert("Invalid bid amount!");
   }
 }
 
