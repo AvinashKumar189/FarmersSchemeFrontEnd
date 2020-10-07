@@ -9,16 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoldCropHistoryComponent implements OnInit {
 
-  userId:number;
+  userId: number;
   soldCropList: SoldCropDetails[];
 
   constructor(private farmerService: FarmerService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userId=Number(sessionStorage.getItem("userId"));
-    this.farmerService.viewSoldHistory(this.userId).subscribe( data=>{
-      alert(JSON.stringify(data));
-      this.soldCropList=data.soldCrop;
+    this.userId = Number(sessionStorage.getItem("userId"));
+    this.farmerService.viewSoldHistory(this.userId).subscribe(data => {
+      //alert(JSON.stringify(data));
+      console.log(data);
+      this.soldCropList = data.soldCrop;
     }
 
     )
@@ -26,11 +27,11 @@ export class SoldCropHistoryComponent implements OnInit {
 
 }
 
-export class SoldCropDetails{
-  sellRequestId:number;
-  cropName:string;
-  quantity:number;
-  basePrice:number;
-  soldPrice:number;
-  soldDate:Date;
+export class SoldCropDetails {
+  sellRequestId: number;
+  cropName: string;
+  quantity: number;
+  basePrice: number;
+  soldPrice: number;
+  soldDate: Date;
 }
