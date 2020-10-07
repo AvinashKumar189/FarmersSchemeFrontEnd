@@ -8,27 +8,35 @@
       <tr>
         <th>Bidder Id</th>
         <th>Full Name</th>
-        <th>Contact No</th>
-        <th>Email Id</th>
-        <th>Account No</th>
-        <th>IFSC</th>
-        <th>Approved Status</th>
+        <th>Action</th>
       </tr>  
 
 
       <tr *ngFor="let b of bidderList">           
         <td>{{b.id}}</td>
         <td>{{b.fullName}}</td>
-        <td>{{b.contactNo}}</td>
-        <td>{{b.emailId}}</td>
-        <td>{{b.accountNo}}</td>
-        <td>{{b.ifsc}}</td>
         <td>
-          <a><button class="btn" type="submit" (click)= "approveBidder(b.id)">{{b.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
+          <a *ngIf="b.approvedStatus=='N'"><button class="btn" type="submit" (click)= "approveBidder(b.id)">Approve</button></a>
+          <a *ngIf="b.approvedStatus=='Y'"><button class="btn" type="submit" (click)= "viewBidderDetails(b.id)">View More</button></a>
         </td>
       </tr>
   
     </table>
+
+    <div *ngIf="toggleBidder">
+      <h3>Personal Details:</h3>
+          Name: {{bidder.fullName}}
+          Contact No: {{bidder.contactNo}}
+          Email ID: {{bidder.emailId}}
+      <h3>Address Details:</h3>
+          Address: {{bidder.address}}
+          City: {{bidder.city}}
+          State: {{bidder.state}}
+          Pincode:  {{bidder.pinCode}}
+      <h3>Bank Details:</h3>
+          Account No: {{bidder.accountNo}}
+          IFSC Code: {{bidder.ifsc}}
+    </div>
 
 </div>
 

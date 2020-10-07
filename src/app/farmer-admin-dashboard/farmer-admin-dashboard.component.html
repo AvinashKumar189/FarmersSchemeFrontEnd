@@ -6,28 +6,39 @@
         <tr>
           <th>Farmer Id</th>
           <th>Full Name</th>
-          <th>Contact No</th>
-          <th>Email Id</th>
-          <th>Land Area</th>
-          <th>Account No</th>
-          <th>IFSC</th>
-          <th>Approved Status</th>
+          <th>Action</th>
         </tr> 
         
-        <tr *ngFor="let f of farmerList">           
+        <tr *ngFor="let f of farmerList">          
           <td>{{f.id}}</td>
           <td>{{f.fullName}}</td>
-          <td>{{f.contactNo}}</td>
-          <td>{{f.emailId}}</td>
-          <td>{{f.landArea}}</td>
-          <td>{{f.accountNo}}</td>
-          <td>{{f.ifsc}}</td>
           <td>
-            <a><button class="btn" type="submit" (click)= "approveFarmer(f.id)">{{f.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
+            <a *ngIf="f.approvedStatus=='N'"><button class="btn" type="submit" (click)= "approveFarmer(f.id)">Approve</button></a>
+            <a *ngIf="f.approvedStatus=='Y'"><button class="btn" type="submit" (click)= "viewFarmerDetails(f.id)">View More</button></a>
           </td>
         </tr>
     
       </table>
+
+      <div *ngIf="toggleFarmer">
+        <h3>Personal Details:</h3>
+            Name: {{farmer.fullName}}
+            Contact No: {{farmer.contactNo}}
+            Email ID: {{farmer.emailId}}
+        <h3>Address Details:</h3>
+            Address: {{farmer.address}}
+            City: {{farmer.city}}
+            State: {{farmer.state}}
+            Pincode:  {{farmer.pinCode}}
+        <h3>Land Details:</h3>
+            Land Area:  {{farmer.landArea}}
+            Land Address: {{farmer.landAddress}}
+            Land Pincode: {{farmer.landPincode}}
+        <h3>Bank Details:</h3>
+            Account No: {{farmer.accountNo}}
+            IFSC Code: {{farmer.ifsc}}
+      </div>
+
 </div>
 
 <app-footer></app-footer>

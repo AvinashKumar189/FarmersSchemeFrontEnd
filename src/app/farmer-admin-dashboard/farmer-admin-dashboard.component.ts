@@ -17,6 +17,8 @@ export class FarmerAdminDashboardComponent implements OnInit {
   biddingEndDate:Date;
   sellingDeadline:Date;
   biddingStartDate:Date;
+  toggleFarmer:boolean = false;
+  farmer: Farmer=new Farmer();
 
   constructor(private adminService: AdminService, private router: Router) { }
 
@@ -33,6 +35,16 @@ export class FarmerAdminDashboardComponent implements OnInit {
       alert(JSON.stringify(data));
     });
   }
+
+  viewFarmerDetails(id: number){
+    this.id=id;
+    this.toggleFarmer=!this.toggleFarmer;
+    this.adminService.getFarmerDetails(this.id).subscribe(data=>{
+      alert(JSON.stringify(data));
+      this.farmer=data;
+    });
+  }
+
 }
 
 export class Farmer {

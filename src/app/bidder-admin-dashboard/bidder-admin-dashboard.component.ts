@@ -16,6 +16,8 @@ export class BidderAdminDashboardComponent implements OnInit {
   biddingEndDate:Date;
   sellingDeadline:Date;
   biddingStartDate:Date;
+  toggleBidder:boolean = false;
+  bidder: Bidder=new Bidder();
 
   constructor(private adminService: AdminService, private router: Router) { }
 
@@ -30,6 +32,15 @@ export class BidderAdminDashboardComponent implements OnInit {
     this.id=id;
     this.adminService.approveBidder(this.id).subscribe( data=>{
       alert(JSON.stringify(data));
+    });
+  }
+
+  viewBidderDetails(id: number){
+    this.id=id;
+    this.toggleBidder=!this.toggleBidder;
+    this.adminService.getBidderDetails(this.id).subscribe(data=>{
+      alert(JSON.stringify(data));
+      this.bidder=data;
     });
   }
 

@@ -51,6 +51,16 @@ export class AdminService {
     return this.http.get<any>(url);
   }
 
+  getFarmerDetails(id:number): Observable<any> {
+    let url = 'http://localhost:8181/get-farmer-details?farmerId='+id;
+    return this.http.get<any>(url);
+  }
+
+  getBidderDetails(id:number): Observable<any> {
+    let url = 'http://localhost:8181/get-bidder-details?bidderId='+id;
+    return this.http.get<any>(url);
+  }
+
 
 
 }
