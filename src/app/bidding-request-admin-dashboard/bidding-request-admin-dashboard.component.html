@@ -1,0 +1,28 @@
+<app-after-login-navbar></app-after-login-navbar>
+
+<div class="card">
+
+    <h2>Bidding Requests</h2>
+
+    <table id="t01">
+      <tr>
+        <th>Bid Id</th>
+        <th>Bid Amount</th>
+        <th>Bid Date</th>
+        <th>Approved Status</th>
+      </tr>
+      
+      <tr *ngFor="let br of bidList">           
+        <td>{{br.id}}</td>
+        <td>{{br.amount}}</td>
+        <td>{{br.bidDate}}</td>
+        <td>
+          <a><button class="btn" type="submit" (click)= "approveBiddingRequest(br.id)">{{br.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
+        </td>
+      </tr>     
+  
+    </table><br/>
+
+</div>
+
+<app-footer></app-footer>

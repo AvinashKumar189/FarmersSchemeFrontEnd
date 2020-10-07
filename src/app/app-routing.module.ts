@@ -19,6 +19,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { AfterLoginBidderComponent } from './after-login-bidder/after-login-bidder.component';
+import { FarmerAdminDashboardComponent } from './farmer-admin-dashboard/farmer-admin-dashboard.component';
+import { BiddingRequestAdminDashboardComponent } from './bidding-request-admin-dashboard/bidding-request-admin-dashboard.component';
+import { SellRequestAdminDashboardComponent } from './sell-request-admin-dashboard/sell-request-admin-dashboard.component';
+import { BidderAdminDashboardComponent } from './bidder-admin-dashboard/bidder-admin-dashboard.component';
 
 
 
@@ -42,7 +46,11 @@ const routes: Routes = [
   { path: 'register-success', component: RegisterSuccessComponent },
   { path: 'after-login-bidder', component: AfterLoginBidderComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'sell-request-success', component: SellRequestSuccessComponent }
+  { path: 'sell-request-success', component: SellRequestSuccessComponent },
+  { path: 'farmer-admin-dashboard', component: FarmerAdminDashboardComponent },
+  { path: 'bidder-admin-dashboard', component: BidderAdminDashboardComponent },
+  { path: 'sell-request-admin-dashboard', component: SellRequestAdminDashboardComponent },
+  { path: 'bidding-request-admin-dashboard', component: BiddingRequestAdminDashboardComponent}
 
 ];
 

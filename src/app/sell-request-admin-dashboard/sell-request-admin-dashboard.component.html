@@ -1,0 +1,48 @@
+<app-after-login-navbar></app-after-login-navbar>
+
+<div class="card">
+
+    <h2>Sell Requests</h2>
+
+    <table id="t01">
+      <tr>
+        <th>Sell Request Id</th>
+        <th>Request Date</th>
+        <th>Crop Type</th>
+        <th>Crop Name</th>
+        <th>Selling Deadline</th>
+        <th>Bidding DeadLine</th>
+        <th>Approved Status</th>
+        <th>Bidding Status</th>
+      </tr>  
+
+      <tr *ngFor="let sr of cropList">           
+        <td>{{sr.requestId}}</td>
+        <td>{{sr.requestDate}}</td>
+        <td>{{sr.cropType}}</td>
+        <td>{{sr.cropName}}</td>
+        <td>{{sr.sellingDeadline}}</td>
+        <td>
+          <a><button class="btn2" type="submit" (click)= "openBiddingDeadlineForm(sr.requestId,sr.requestDate,sr.sellingDeadline)">{{biddingDeadlineStatus}}</button></a>
+        </td>
+        <td>
+          <a><button class="btn" type="submit" (click)= "approveSellRequest(sr.requestId)">{{sr.approvedStatus=='N'? 'Approve':'Approved'}}</button></a>
+        </td>
+        <td>
+          <a><button class="btn" type="submit" (click)= "closeBidding(sr.requestId)">{{sr.biddingStatus=='O'? 'Close Bidding':'Bidding Closed'}}</button></a>
+        </td>
+      </tr>
+    </table><br/>
+
+    <div class="container" *ngIf="toggle">
+      <div class="form">
+      <form (ngSubmit)="setBiddingDeadline()">
+          <input type = "date" placeholder="Bidding DeadLine" name="biddingDeadline" [(ngModel)]="biddingEndDate">
+          <input type="submit" class="confirmbtn" value="Confirm"/>
+      </form>
+      </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

@@ -26,6 +26,10 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { MustMatchDirective } from './must-match.directive';
 import { SellRequestSuccessComponent } from './sell-request-success/sell-request-success.component';
+import { FarmerAdminDashboardComponent } from './farmer-admin-dashboard/farmer-admin-dashboard.component';
+import { BidderAdminDashboardComponent } from './bidder-admin-dashboard/bidder-admin-dashboard.component';
+import { SellRequestAdminDashboardComponent } from './sell-request-admin-dashboard/sell-request-admin-dashboard.component';
+import { BiddingRequestAdminDashboardComponent } from './bidding-request-admin-dashboard/bidding-request-admin-dashboard.component';
 
 
 @NgModule({
@@ -53,6 +57,10 @@ import { SellRequestSuccessComponent } from './sell-request-success/sell-request
     AdminDashboardComponent,
     MustMatchDirective,
     SellRequestSuccessComponent,
+    FarmerAdminDashboardComponent,
+    BidderAdminDashboardComponent,
+    SellRequestAdminDashboardComponent,
+    BiddingRequestAdminDashboardComponent,
 
   ],
   imports: [
