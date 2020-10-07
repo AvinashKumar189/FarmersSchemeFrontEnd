@@ -1,3 +1,4 @@
+import { SellRequestSuccessComponent } from './sell-request-success/sell-request-success.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
@@ -22,25 +23,26 @@ import { AfterLoginBidderComponent } from './after-login-bidder/after-login-bidd
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'about-us', component: AboutUsComponent},
-  {path: 'contact-us', component: ContactUsComponent},
-  {path: 'forgot-password', component:ForgotPasswordComponent},
-  {path: 'farmer-or-bidder', component:FarmerOrBidderComponent},
-  {path: 'after-login-farmer', component:AfterLoginFarmerComponent},
-  {path: 'place-sell-request', component:PlaceSellRequestComponent},
-  {path: 'sold-crop-history', component:SoldCropHistoryComponent},
-  {path: 'marketplace', component:MarketplaceComponent},
-  {path: 'after-login-navbar', component:AfterLoginNavbarComponent},
-  {path: 'logout', component:LogoutComponent},
-  {path: 'admin-login', component:AdminLoginComponent},
-  {path: 'farmer-registration', component:FarmerRegistrationComponent},
-  {path: 'bidder-registration', component:BidderRegistrationComponent},
-  {path: 'register-success', component:RegisterSuccessComponent},
-  {path: 'after-login-bidder', component:AfterLoginBidderComponent},
-  {path: 'admin-dashboard', component:AdminDashboardComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'farmer-or-bidder', component: FarmerOrBidderComponent },
+  { path: 'after-login-farmer', component: AfterLoginFarmerComponent },
+  { path: 'place-sell-request', component: PlaceSellRequestComponent },
+  { path: 'sold-crop-history', component: SoldCropHistoryComponent },
+  { path: 'marketplace', component: MarketplaceComponent },
+  { path: 'after-login-navbar', component: AfterLoginNavbarComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'farmer-registration', component: FarmerRegistrationComponent },
+  { path: 'bidder-registration', component: BidderRegistrationComponent },
+  { path: 'register-success', component: RegisterSuccessComponent },
+  { path: 'after-login-bidder', component: AfterLoginBidderComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'sell-request-success', component: SellRequestSuccessComponent }
 
 ];
 

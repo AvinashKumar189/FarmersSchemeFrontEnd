@@ -1,0 +1,10 @@
+.card{
+    margin: 1rem 4rem; 
+    background-color: #fff;
+    padding: 16px;
+    }
+
+.card h2 {
+    text-align: center;
+    margin: 100px;
+  }

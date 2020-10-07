@@ -12,44 +12,47 @@ export class AfterLoginBidderComponent implements OnInit {
   cropList: CropDetails[];
   id: number;
   name: string;
-  currentBid:number;
-  liveBid:number;
-  basePrice:number;
-  bidInProcess: BidInProcess=new BidInProcess();
+  currentBid: number;
+  liveBid: number;
+  basePrice: number;
+  bidInProcess: BidInProcess = new BidInProcess();
 
-  constructor(private bidderService: BidderService, private router: Router) {}
+  constructor(private bidderService: BidderService, private router: Router) { }
 
   ngOnInit(): void {
-    this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
-    this.bidderService.fetchAllCrops().subscribe( data =>{
-      alert(JSON.stringify(data));
-      this.cropList=data.cropForSale;
+    this.bidInProcess.bidderId = Number(sessionStorage.getItem("userId"));
+    this.bidderService.fetchAllCrops().subscribe(data => {
+      //alert(JSON.stringify(data));
+      console.log(data);
+      this.cropList = data.cropForSale;
     });
   }
 
-  displayCropForBidding(id: number, name: string, price: number){
-    this.id=id;
-    this.name=name;
-    this.basePrice=price;
+  displayCropForBidding(id: number, name: string, price: number) {
+    this.id = id;
+    this.name = name;
+    this.basePrice = price;
     this.toggle = !this.toggle;
-    this.bidderService.fetchCropDetails(this.id).subscribe( data =>{
-      alert(JSON.stringify(data));
-      this.currentBid=data.amount;
+    this.bidderService.fetchCropDetails(this.id).subscribe(data => {
+      //alert(JSON.stringify(data));
+      console.log(data);
+      this.currentBid = data.amount;
     }
 
     )
   }
 
   placeBidForCrop() {
-    if(this.liveBid>(this.currentBid+100)&& this.liveBid>this.basePrice){
-      this.bidInProcess.sellRequestId=this.id;
-      this.bidInProcess.amount=this.liveBid;
-     //this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
-      this.bidderService.submitBidForCrop(this.bidInProcess).subscribe( data =>{
-        alert(JSON.stringify(data));
-        if(data.status)
+    if (this.liveBid > (this.currentBid + 100) && this.liveBid > this.basePrice) {
+      this.bidInProcess.sellRequestId = this.id;
+      this.bidInProcess.amount = this.liveBid;
+      //this.bidInProcess.bidderId=Number(sessionStorage.getItem("userId")); 
+      this.bidderService.submitBidForCrop(this.bidInProcess).subscribe(data => {
+        //alert(JSON.stringify(data));
+        console.log(data);
+        if (data.status)
           alert(data.statusMessage);
-        else 
+        else
           alert(data.statusMessage);
       });
     }
@@ -58,19 +61,19 @@ export class AfterLoginBidderComponent implements OnInit {
   }
 }
 
-export class CropDetails{
-  cropId:number;
-  cropName:string;
-  cropType:string;
-  basePrice:number;
+export class CropDetails {
+  cropId: number;
+  cropName: string;
+  cropType: string;
+  basePrice: number;
   currentBid: number;
 }
 
-export class BidInProcess{
+export class BidInProcess {
 
-  sellRequestId:number;
-  bidderId:number;
-  amount:number;
-  
+  sellRequestId: number;
+  bidderId: number;
+  amount: number;
+
 }
 

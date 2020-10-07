@@ -14,19 +14,19 @@ export class PlaceSellRequestComponent implements OnInit {
   constructor(
     private router: Router,
     private sellRequestService: SellRequestService
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   goSellRequest() {
     alert(JSON.stringify(this.sellRequest));
     //console.log(this.sellRequest);
     this.sellRequestService
       .goSellRequest(this.sellRequest)
-      .subscribe((response) => {
+      .subscribe(response => {
         this.data = response;
       });
-    //this.router.navigate(['/register-success']);
+    //this.router.navigate(['/sell-request-success']);
   }
 }
 
@@ -35,6 +35,6 @@ export class SellRequest {
   cropName: string;
   fertilizerType: string;
   quantity: number;
-  sellingDeadline : Date;
-  basePrice : number;
+  sellingDeadline: Date;
+  basePrice: number;
 }

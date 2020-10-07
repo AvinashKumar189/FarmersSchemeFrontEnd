@@ -25,6 +25,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { MustMatchDirective } from './must-match.directive';
+import { SellRequestSuccessComponent } from './sell-request-success/sell-request-success.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { MustMatchDirective } from './must-match.directive';
     RegisterSuccessComponent,
     AdminDashboardComponent,
     MustMatchDirective,
+    SellRequestSuccessComponent,
 
   ],
   imports: [
