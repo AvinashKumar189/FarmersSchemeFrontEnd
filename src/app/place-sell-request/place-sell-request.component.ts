@@ -41,4 +41,5 @@ export class SellRequest {
   quantity: number;
   sellingDeadline: Date;
   basePrice: number;
+  approvedStatus: string;
 }
