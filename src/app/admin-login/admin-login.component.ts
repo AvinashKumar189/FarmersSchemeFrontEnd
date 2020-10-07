@@ -12,14 +12,14 @@ export class AdminLoginComponent implements OnInit {
   constructor(private router : Router, private adminService: AdminService) { }
   user : User = new User();
   data : any;
-  loginFailed : boolean;
+  loginFailed : boolean = false;
 
   checkAdminLogin(){
     alert(JSON.stringify(this.user));
     this.adminService.adminLogin(this.user).subscribe(response => {
       this.data = response;
       alert(JSON.stringify(this.data));
-      if(this.data.status==true) {
+      if(this.data.status) {
         sessionStorage.setItem("userId",response.id);
         this.router.navigate(['/admin-dashboard']);
       }
