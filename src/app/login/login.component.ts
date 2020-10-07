@@ -15,10 +15,12 @@ export class LoginComponent implements OnInit {
   loginFailed : boolean;
 
   checkLogin(){
-      alert(JSON.stringify(this.user));
+      //alert(JSON.stringify(this.user));
+      console.log(this.user);
       this.loginService.checkLogin(this.user).subscribe(response => {
       this.data = response;
-      alert(JSON.stringify(this.data));
+     //alert(JSON.stringify(this.data));
+      console.log(this.data);
       if (this.data.status && this.data.farmer)  { //this.data.status --> if status is true , i.e. email id and password are true only
       sessionStorage.setItem("userId",response.id);
       this.router.navigate(['/after-login-farmer']);

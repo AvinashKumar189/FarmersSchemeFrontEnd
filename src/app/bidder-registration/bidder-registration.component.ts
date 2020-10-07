@@ -22,12 +22,12 @@ export class BidderRegistrationComponent implements OnInit {
   }
 
   goRegisterSuccess(){
-    alert(JSON.stringify(this.bidder));
-    //console.log(this.bidder);
+    //alert(JSON.stringify(this.bidder));
+    console.log(this.bidder);
     this.bidderService.goRegisterSuccess(this.bidder).subscribe(response => {
       this.data= response;
     })
-    //this.router.navigate(['/register-success']);
+    this.router.navigate(['/register-success']);
   }
 
 }

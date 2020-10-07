@@ -20,12 +20,12 @@ export class FarmerRegistrationComponent implements OnInit {
   }
 
   goRegisterSuccess(){
-    alert(JSON.stringify(this.farmer));
-    //console.log(this.farmer);
+    //alert(JSON.stringify(this.farmer));
+    console.log(this.farmer);
     this.farmerService.goRegisterSuccess(this.farmer).subscribe(response => {
       this.data = response;
     });
-    //this.router.navigate(['/register-success']);
+    this.router.navigate(['/register-success']);
   }
 
 }
