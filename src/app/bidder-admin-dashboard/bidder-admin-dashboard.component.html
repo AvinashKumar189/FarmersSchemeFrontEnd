@@ -23,19 +23,19 @@
   
     </table>
 
-    <div *ngIf="toggleBidder">
-      <h3>Personal Details:</h3>
-          Name: {{bidder.fullName}}
-          Contact No: {{bidder.contactNo}}
-          Email ID: {{bidder.emailId}}
-      <h3>Address Details:</h3>
-          Address: {{bidder.address}}
-          City: {{bidder.city}}
-          State: {{bidder.state}}
-          Pincode:  {{bidder.pinCode}}
-      <h3>Bank Details:</h3>
-          Account No: {{bidder.accountNo}}
-          IFSC Code: {{bidder.ifsc}}
+    <div *ngIf="toggleBidder" class = "bidderDetails">
+      <h2><b>Personal Details:</b></h2>
+       <b>Name:</b> {{bidder.fullName}}<br/>
+       <b>Contact No:</b> {{bidder.contactNo}}<br/>
+       <b>Email ID:</b> {{bidder.emailId}}<br/>
+      <h2>Address Details:</h2>
+       <b>Address:</b> {{bidder.address}}<br/>
+       <b>City:</b> {{bidder.city}}<br/>
+       <b>State:</b> {{bidder.state}}<br/>
+       <b>Pincode:</b>  {{bidder.pinCode}}<br/>
+      <h2>Bank Details:</h2>
+       <b>Account No:</b> {{bidder.accountNo}}<br/>
+       <b>IFSC Code:</b> {{bidder.ifsc}}<br/>
     </div>
 
 </div>

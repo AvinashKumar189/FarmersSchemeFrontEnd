@@ -20,23 +20,23 @@
     
       </table>
 
-      <div *ngIf="toggleFarmer">
-        <h3>Personal Details:</h3>
-            Name: {{farmer.fullName}}
-            Contact No: {{farmer.contactNo}}
-            Email ID: {{farmer.emailId}}
-        <h3>Address Details:</h3>
-            Address: {{farmer.address}}
-            City: {{farmer.city}}
-            State: {{farmer.state}}
-            Pincode:  {{farmer.pinCode}}
-        <h3>Land Details:</h3>
-            Land Area:  {{farmer.landArea}}
-            Land Address: {{farmer.landAddress}}
-            Land Pincode: {{farmer.landPincode}}
-        <h3>Bank Details:</h3>
-            Account No: {{farmer.accountNo}}
-            IFSC Code: {{farmer.ifsc}}
+      <div *ngIf="toggleFarmer" class = "farmerDetails">
+        <h2>Personal Details:</h2>
+            <b>Name:</b> {{farmer.fullName}} <br/>
+            <b>Contact No:</b> {{farmer.contactNo}} <br/>
+            <b>Email ID:</b> {{farmer.emailId}} <br/>
+        <h2>Address Details:</h2>
+            <b>Address:</b> {{farmer.address}} <br/>
+            <b>City:</b> {{farmer.city}} <br/>
+            <b>State:</b> {{farmer.state}} <br/>
+            <b>Pincode:</b>  {{farmer.pinCode}} <br/>
+        <h2>Land Details:</h2>
+            <b>Land Area:</b>  {{farmer.landArea}} <br/>
+            <b>Land Address:</b> {{farmer.landAddress}} <br/>
+            <b>Land Pincode:</b> {{farmer.landPincode}} <br/>
+        <h2>Bank Details:</h2>
+            <b>Account No:</b> {{farmer.accountNo}} <br/>
+            <b>IFSC Code:</b> {{farmer.ifsc}} <br/>
       </div>
 
 </div>
