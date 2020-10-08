@@ -7,6 +7,7 @@
       <th>Crop Type</th>
       <th>Crop Name</th>
       <th>Base Price</th>
+      <th>Bidding Deadline</th>
       <th>Action</th>
     </tr>
     <tr *ngFor="let c of cropList">           
@@ -14,16 +15,12 @@
       <td>{{c.cropType}}</td>
       <td>{{c.cropName}}</td>
       <td>{{c.basePrice}}</td>
+      <td>{{c.biddingDeadline}}</td>
       <td>
         <a><button class="btn" type="submit" (click)= "displayCropForBidding(c.cropId,c.cropName,c.basePrice)">Make Bid</button></a>
-        <div *ngIf="today==c.biddingDeadline; then expiringBid(c.cropId)"></div>
       </td>
     </tr>
   </table>
-
-  <div *ngIf="count>0">
-    <h3 style="color:red; text-align: center;">Bidding for crop Id = {{expiringCrop}} about to end soon!</h3>
-  </div>
 
   <table id="t01">
 
