@@ -23,7 +23,8 @@ export class BiddingRequestAdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.adminId = String(sessionStorage.getItem("userId")); 
     this.adminService.viewAllRequests(this.adminId).subscribe( data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+      console.log(data);
       this.bidList=data.biddingRequest;
     });
   }
@@ -31,7 +32,8 @@ export class BiddingRequestAdminDashboardComponent implements OnInit {
   approveBiddingRequest(id: number){
     this.id=id;
     this.adminService.approveSellRequest(this.id).subscribe( data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+      console.log(data);
     });
   }
 

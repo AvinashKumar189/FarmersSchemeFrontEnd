@@ -23,7 +23,8 @@ export class SellRequestAdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.adminId = String(sessionStorage.getItem("userId")); 
     this.adminService.viewAllRequests(this.adminId).subscribe( data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+      console.log(data);
       this.cropList=data.cropSellRequest;
     });
   }
@@ -31,7 +32,8 @@ export class SellRequestAdminDashboardComponent implements OnInit {
   approveSellRequest(id: number){
     this.id=id;
     this.adminService.approveSellRequest(this.id).subscribe( data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+     console.log(data);
     });
   }
 
@@ -46,7 +48,8 @@ export class SellRequestAdminDashboardComponent implements OnInit {
     if(this.biddingEndDate>this.biddingStartDate && this.biddingEndDate<this.sellingDeadline){
     this.crop.biddingDeadline=this.biddingEndDate;   
     this.adminService.setBiddingDeadline(this.crop).subscribe( data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+     console.log(data);
       if(data.status)
         alert(data.statusMessage);
       else 
@@ -62,7 +65,8 @@ export class SellRequestAdminDashboardComponent implements OnInit {
   closeBidding(id: number){
     this.id=id;
     this.adminService.closeBiddingForCrop(this.id).subscribe( data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+     console.log(data);
     });
   }
 

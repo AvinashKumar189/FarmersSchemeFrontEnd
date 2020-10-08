@@ -25,7 +25,8 @@ export class FarmerAdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.adminId = String(sessionStorage.getItem("userId")); 
     this.adminService.viewAllRequests(this.adminId).subscribe(data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+      console.log(data);
       this.farmerList=data.farmerRegistrationRequest;
     });
   }
@@ -33,7 +34,8 @@ export class FarmerAdminDashboardComponent implements OnInit {
   approveFarmer(id: number){
     this.id=id;
     this.adminService.approveFarmer(this.id).subscribe(data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+     console.log(data);
     });
   }
 
@@ -41,7 +43,8 @@ export class FarmerAdminDashboardComponent implements OnInit {
     this.id=id;
     this.toggleFarmer=!this.toggleFarmer;
     this.adminService.getFarmerDetails(this.id).subscribe(data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+     console.log(data);
       this.farmer=data;
     });
   }

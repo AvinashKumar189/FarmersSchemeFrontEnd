@@ -24,7 +24,8 @@ export class BidderAdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.adminId = String(sessionStorage.getItem("userId")); 
     this.adminService.viewAllRequests(this.adminId).subscribe( data=>{
-      alert(JSON.stringify(data));
+      //alert(JSON.stringify(data));
+      console.log(data);
       this.bidderList=data.bidderRegistrationRequest;
     });
   }
@@ -32,7 +33,8 @@ export class BidderAdminDashboardComponent implements OnInit {
   approveBidder(id: number){
     this.id=id;
     this.adminService.approveBidder(this.id).subscribe( data=>{
-      alert(JSON.stringify(data));
+      //alert(JSON.stringify(data));
+      console.log(data);
     });
   }
 
@@ -40,7 +42,8 @@ export class BidderAdminDashboardComponent implements OnInit {
     this.id=id;
     this.toggleBidder=!this.toggleBidder;
     this.adminService.getBidderDetails(this.id).subscribe(data=>{
-      alert(JSON.stringify(data));
+      //alert(JSON.stringify(data));
+      console.log(data);
       this.bidder=data;
     });
   }
