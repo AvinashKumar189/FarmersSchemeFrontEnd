@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
 import { BidderService } from './../bidder.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,6 +17,10 @@ export class AfterLoginBidderComponent implements OnInit {
   liveBid: number;
   basePrice: number;
   bidInProcess: BidInProcess = new BidInProcess();
+  currDate: Date;
+  today: string;
+  count: number=0;
+  expiringCrop: number;
 
   constructor(private bidderService: BidderService, private router: Router) { }
 
@@ -24,8 +29,18 @@ export class AfterLoginBidderComponent implements OnInit {
     this.bidderService.fetchAllCrops().subscribe(data => {
       //alert(JSON.stringify(data));
       console.log(data);
+      this.currDate=new Date();
+      let date = ("0" + this.currDate.getDate()).slice(-2);
+      let month = ("0" + (this.currDate.getMonth() + 1)).slice(-2);
+      let year = this.currDate.getFullYear();
+      this.today = year + "-" + month + "-" + date;
       this.cropList = data.cropForSale;
     });
+  }
+
+  expiringBid(id: number){
+    this.expiringCrop=id;
+    this.count++;
   }
 
   displayCropForBidding(id: number, name: string, price: number) {
@@ -67,6 +82,7 @@ export class CropDetails {
   cropType: string;
   basePrice: number;
   currentBid: number;
+  biddingDeadline: Date; 
 }
 
 export class BidInProcess {

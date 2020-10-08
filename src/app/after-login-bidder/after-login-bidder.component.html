@@ -16,10 +16,15 @@
       <td>{{c.basePrice}}</td>
       <td>
         <a><button class="btn" type="submit" (click)= "displayCropForBidding(c.cropId,c.cropName,c.basePrice)">Make Bid</button></a>
+        <div *ngIf="today==c.biddingDeadline; then expiringBid(c.cropId)"></div>
       </td>
     </tr>
+  </table>
 
-  </table><br/>
+  <div *ngIf="count>0">
+    <h3 style="color:red; text-align: center;">Bidding for crop Id = {{expiringCrop}} about to end soon!</h3>
+  </div>
+
   <table id="t01">
 
     <tr>

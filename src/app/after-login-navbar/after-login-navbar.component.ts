@@ -11,6 +11,7 @@ export class AfterLoginNavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    
   }
   goHome(){
     this.router.navigate(['/home']);

@@ -23,11 +23,13 @@ export class LoginComponent implements OnInit {
       console.log(this.data);
       if (this.data.status && this.data.farmer)  { //this.data.status --> if status is true , i.e. email id and password are true only
       sessionStorage.setItem("userId",response.id);
+      sessionStorage.setItem("userName",response.name);
       this.router.navigate(['/after-login-farmer']);
     }
 
     else if (this.data.status && !this.data.farmer) {
       sessionStorage.setItem("userId",response.id);
+      sessionStorage.setItem("userName",response.name);
       this.router.navigate(['/after-login-bidder']);     
     }
 
