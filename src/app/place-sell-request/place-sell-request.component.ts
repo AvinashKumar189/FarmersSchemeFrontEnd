@@ -28,8 +28,13 @@ export class PlaceSellRequestComponent implements OnInit {
       .goSellRequest(this.sellRequest)
       .subscribe(response => {
         this.data = response;
+        if(response.status)
+          alert(response.statusMessage);
+        else
+          alert(response.statusMessage);
       });
-    this.router.navigate(['/sell-request-success']);
+    if(this.data.status)
+      this.router.navigate(['/sell-request-success']);
   }
 }
 
