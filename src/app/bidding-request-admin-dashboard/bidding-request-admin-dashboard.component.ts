@@ -31,7 +31,7 @@ export class BiddingRequestAdminDashboardComponent implements OnInit {
 
   approveBiddingRequest(id: number){
     this.id=id;
-    this.adminService.approveSellRequest(this.id).subscribe( data=>{
+    this.adminService.approveBiddingRequest(this.id).subscribe( data=>{
      // alert(JSON.stringify(data));
       console.log(data);
     });
