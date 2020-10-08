@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class FarmerAdminDashboardComponent implements OnInit {
   
-  admin:string;
+  adminId:string;
   farmerList:Farmer[];
   id:number;
   toggle: boolean=false;
@@ -23,7 +23,8 @@ export class FarmerAdminDashboardComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-    this.adminService.viewAllRequests().subscribe(data=>{
+    this.adminId = String(sessionStorage.getItem("userId")); 
+    this.adminService.viewAllRequests(this.adminId).subscribe(data=>{
       alert(JSON.stringify(data));
       this.farmerList=data.farmerRegistrationRequest;
     });

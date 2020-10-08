@@ -8,7 +8,7 @@ import { AdminService } from './../admin.service';
   styleUrls: ['./sell-request-admin-dashboard.component.css']
 })
 export class SellRequestAdminDashboardComponent implements OnInit {
-  admin:string;
+  adminId:string;
   cropList:SellRequest[];
   id:number;
   toggle: boolean=false;
@@ -21,7 +21,8 @@ export class SellRequestAdminDashboardComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-    this.adminService.viewAllRequests().subscribe( data=>{
+    this.adminId = String(sessionStorage.getItem("userId")); 
+    this.adminService.viewAllRequests(this.adminId).subscribe( data=>{
       alert(JSON.stringify(data));
       this.cropList=data.cropSellRequest;
     });

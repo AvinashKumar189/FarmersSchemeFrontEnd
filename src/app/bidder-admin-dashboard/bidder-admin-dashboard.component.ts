@@ -8,7 +8,7 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./bidder-admin-dashboard.component.css']
 })
 export class BidderAdminDashboardComponent implements OnInit {
-  admin:string;
+  adminId:string;
   bidderList:Bidder[];
   id:number;
   toggle: boolean=false;
@@ -22,7 +22,8 @@ export class BidderAdminDashboardComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-    this.adminService.viewAllRequests().subscribe( data=>{
+    this.adminId = String(sessionStorage.getItem("userId")); 
+    this.adminService.viewAllRequests(this.adminId).subscribe( data=>{
       alert(JSON.stringify(data));
       this.bidderList=data.bidderRegistrationRequest;
     });

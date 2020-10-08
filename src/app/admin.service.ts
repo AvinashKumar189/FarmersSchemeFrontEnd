@@ -11,8 +11,8 @@ import { User } from './admin-login/admin-login.component';
 export class AdminService {
   constructor(private http: HttpClient) { }
 
-  viewAllRequests(): Observable<any>{
-    let url='http://localhost:8181/view-all-requests';
+  viewAllRequests(id:string): Observable<any>{
+    let url='http://localhost:8181/view-all-requests?admin='+id;
     return this.http.get<any>(url);
   }
 
