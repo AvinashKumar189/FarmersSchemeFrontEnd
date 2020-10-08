@@ -39,7 +39,7 @@
       
       <h2></h2>
       <div class="form">
-        <label for="sellingDeadline"><b>Selling Deadline</b></label>
+        <label for="sellingDeadline"><b>Selling Deadline </b></label>
         <input type="date" placeholder="Selling Deadline" name="sellingDeadline" required [(ngModel)]=sellRequest.sellingDeadline #sellingDeadline="ngModel"/>
         <div *ngIf="myForm.submitted && sellingDeadline.invalid">
           <div *ngIf="sellingDeadline.errors.required">Selling DeadLine is required.</div>
