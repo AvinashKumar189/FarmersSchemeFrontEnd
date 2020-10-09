@@ -30,7 +30,7 @@
       </div>
 
       <div class="form">
-        <label for="quantity"><b>Quantity</b></label>
+        <label for="quantity"><b>Quantity (In Kg)</b></label>
         <input type="number" placeholder="Enter Quantity" name="quantity" required [(ngModel)]=sellRequest.quantity #quantity="ngModel"/>
         <div *ngIf="myForm.submitted && quantity.invalid">
           <div *ngIf="quantity.errors.required">Quantity is required.</div>
@@ -48,7 +48,7 @@
       <h2></h2>
       
       <div class="form">
-        <label for="basePrice"><b>Base Price</b></label>
+        <label for="basePrice"><b>Base Price (In Rupees)</b></label>
         <input type="number" placeholder="Base Price" name="basePrice" required [(ngModel)]=sellRequest.basePrice #basePrice="ngModel"/>
         <div *ngIf="myForm.submitted && quantity.invalid">
           <div *ngIf="basePrice.errors.required">Base Price is required.</div>
