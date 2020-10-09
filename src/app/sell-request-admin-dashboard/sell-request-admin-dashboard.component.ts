@@ -71,6 +71,10 @@ export class SellRequestAdminDashboardComponent implements OnInit {
     this.adminService.closeBiddingForCrop(this.id).subscribe( data=>{
      // alert(JSON.stringify(data));
      console.log(data);
+     if(data.status)
+      alert(data.statusMessage);
+     else
+      alert(data.statusMessage);
     });
   }
 
